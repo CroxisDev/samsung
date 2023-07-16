@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Suporte Técnico | SAMSUNG</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt-BR">
+    <meta name="author" content="Felipe Mendes - RE: 1460500">
+    <meta name="description" content="Suporte Técnico">
+    <meta name="copyright" content="© 2023 CroxisDev">
+    <link rel="icon" href="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/Favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+
+        /*INICIO - ESTILO DA PÁGINA*/
+
+            body {
+                font-family: Arial, sans-serif;
+                background: #333333;
+                max-width: 743px;
+                margin: 0;
+                background-image: url('https://images.samsung.com/is/image/samsung/assets/br/home-appliances/SMG_ImagensSSG.com_Manipulacao_V8_20230411.jpg?imwidth=768');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+
+            h1 {
+                color: #333;
+                text-align: center;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            p {
+                color: #bbbaba;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            footer {
+                text-align: center;
+                bottom: 0;
+                padding: 1%;
+                width: 98.89vw;
+                margin-top: 3%;
+                background-color: #353536;
+                z-index: 6;
+            }
+
+            ::-webkit-scrollbar {
+                width: 0; /* Largura da barra de rolagem */
+            }
+
+            ::-webkit-scrollbar-button {
+                background-color: transparent; /* Cor da trilha da barra de rolagem */
+            }
+        
+        /*FIM - ESTILO DA PÁGINA*/
+
+        /*INICIO - REMOVER ESTILOS PADRÃO NAVEGADOR*/
+
+            *{
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                list-style-type: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+        /*FIM - REMOVER ESTILOS PADRÃO NAVEGADOR*/
+
+        /*INICIO - ESTILOS DE BOTÕES*/
+
+            /*BOTÃO DE COPIAR*/
+
+                .copy-button {
+                    margin-bottom: 10px;
+                    border: none;
+                    background: none;
+                    padding: 5px 10px;
+                    font-size: 16px;
+                    color: #000000;
+                    cursor: pointer;
+                    text-decoration: none;
+                    border: 2px solid #000001;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    transition: background-color 0.3s, color 0.3s;
+                }
+
+                .copy-button:focus {
+                    outline: none;
+                }
+
+                .copy-button:hover {
+                    background-color: #000000;
+                    color: white;
+                }
+
+            /*ESTILO DO BOTÃO WW/AS/RT/PW/DW*/
+
+                .toggle-button {
+                    margin-bottom: 10px;
+                    border: none;
+                    background: none;
+                    padding: 10px 20px;
+                    width: 250px;
+                    font-size: 16px;
+                    color: #000000;
+                    cursor: pointer;
+                    text-decoration: none;
+                    border: 2px solid #000102;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 4px rgb(0, 0, 0);
+                    transition: background-color 0.3s, color 0.1s;
+                    display: inline-block; /* Alinha lado a lado */
+                }
+
+                .toggle-button:focus {
+                    outline: none;
+                }
+
+                .toggle-button:hover {
+                    background-color: #000000;
+                    color: white;
+                }
+
+            /*INICIO - Estilo COR DO ICONE*/
+
+                .theme-icon.fa-moon {
+                    color: #f1c40f;
+                }
+
+                .theme-icon.fa-sun {
+                    color: #f39c12;
+                }
+        
+        /*FIM - ESTILO DE BOTÕES*/
+
+        /*INICIO - ESTILO MENU*/
+
+            .menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 60px;
+                height: 100vh;
+                background-color: #262626;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                transition: all 0.3s ease;
+                z-index: 9;
+            }
+                
+            .menu.hidden {
+                display: none;
+            }
+                
+            .menu .menu-items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+                margin-top: auto;
+            }
+                
+            .menu .menu-items a {
+                color: #fff;
+                text-decoration: none;
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 50%;
+            }
+
+            .menu .menu-items a:hover {
+                background-color: #555;
+            }
+
+            .div-a {
+                color: #fff;
+                text-decoration: none;
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer; /* Altera o cursor para o ícone de uma mão */
+            }
+                
+            .div-a:hover {
+                background-color: #555;
+            }
+                
+            .menu .menu-items hr {
+                width: 80%;
+                margin: 10px 0;
+                border: none;
+                border-top: 1px solid #555;
+            }
+                
+            .menu .menu-items .sticky-note {
+                font-size: 18px;
+            }
+                
+            .menu .menu-items .up-right {
+                font-size: 18px;
+            }
+
+            .menu .menu-items .info-button {
+                font-size: 18px;
+            }
+
+            /*POSICIONAMENTO DO BOTÃO/ICONE MENU*/
+        
+                .toggle-menu { 
+                    position: fixed;
+                    cursor: pointer;
+                    left: 0.63%;
+                    top: 2%;
+                    z-index: 10;
+                    color: #fff;
+                    background-color: #262626;
+                    text-decoration: none;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                    padding: 10px;
+                    border-radius: 10px;
+                }
+
+                .toggle-menu:hover {
+                    background-color: #555;
+                }
+                
+                .toggle-menu i {
+                    font-size: 24px;
+                }
+
+                .content {
+                    margin-top: 20px;
+                    padding: 20px;
+                    display: none; /* Inicia oculto */
+                }
+
+
+        /*FIM - ESTILO MENU*/
+
+        /*INICIO - ESTILO DEV-INFO*/
+
+            .developer-text:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            .dev-info {
+                background-color: #333;
+                text-align: left;
+                border-radius: 5%;
+                color: #ffffff;
+            }
+
+            .dev-color{
+                color: #ffffff;
+            }
+
+        /*FIM - ESTILO DEV-INFO*/
+
+        /*INICIO - CONTENT MAIN*/
+
+            .icon-importante {
+                background-color: #fff;
+                color: #ff004d;
+                font-size: 16px;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
+
+            .content-main {
+                position: flex;
+                border-radius: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                width: 60vw;
+                margin-left: 15%;
+                margin-top: 2%;
+                top: 0;
+                padding: 2%;
+                overflow: hidden;
+                background-color: #FFFFFF; /* Escurecendo a cor */
+                z-index: 5;
+            }
+
+            /*CONFIG SECTION*/
+
+            .section {
+                position: relative;
+                max-width: 100%;
+                padding: 2%;
+            }
+
+            .section .conteudo {
+                overflow-wrap: break-word;
+            }
+
+            .section textarea {
+                width: 100%;
+                height: 100px;
+                padding: 5px;
+                border: 1px solid rgb(71, 71, 71);
+                border-radius: 10px;
+                margin-bottom: 10px;
+                background-color: transparent;
+                color: #666;
+                resize: none; /* Remove a opção de redimensionamento */
+            }
+
+            .section textarea:focus {
+                outline: none;
+            }
+
+            .section label {
+                color: rgb(0, 0, 0);
+            }
+
+            .section select {
+                border-radius: 5px;
+                padding: 3px;
+                border: none;
+                border-bottom: 1px solid rgb(71, 71, 71); /* Adicione a borda inferior personalizada */
+                text-align: left;
+                background-color: transparent;
+                color: rgb(126, 125, 125);
+                margin-bottom: 0.1%;
+                margin-top: 1%;
+            }
+
+            .section select:focus {
+                outline: none;
+            }
+
+            .section input {
+                border: none;
+                border-bottom: 1px solid rgb(71, 71, 71);
+                background-color: transparent;
+                color: rgb(126, 125, 125);
+                resize: none; /* Remove a opção de redimensionamento */
+                border-radius: 3px;
+                padding: 0.5%;
+            }
+
+            .section input:focus {
+                outline: none;
+            }
+
+            .section span {
+                color: rgb(126, 125, 125);
+            }
+
+            .section h1 {
+                color: #333;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .section h2 {
+                color: #666;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .section h3 {
+                color: #000000;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .section h4 {
+                color: #080000;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .section h5 {
+                color: #000000;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .section p {
+                color: #000000;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            /*SECTION DARK-MODE*/
+
+            .content-main-dark {
+                position: flex;
+                border-radius: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                width: 60vw;
+                margin-left: 15%;
+                margin-top: 2%;
+                padding: 2%;
+                overflow: hidden;
+                background-color: rgba(51, 51, 51, 0.98);
+                z-index: 5;
+            }
+
+            .content-main-dark .section {
+                position: relative;
+                max-width: 100%;
+                padding: 2%;
+            }
+
+            .content-main-dark .section .conteudo {
+                overflow-wrap: break-word;
+            }
+
+            .content-main-dark .section textarea {
+                width: 100%;
+                height: 100px;
+                padding: 5px;
+                border: 1px solid rgb(71, 71, 71);
+                border-radius: 10px;
+                margin-bottom: 10px;
+                background-color: transparent;
+                color: #666;
+                resize: none; /* Remove a opção de redimensionamento */
+            }
+
+            .content-main-dark .section textarea:focus {
+                outline: none;
+            }
+
+            .content-main-dark .section select {
+                border-radius: 5px;
+                padding: 3px;
+                border: none;
+                border-bottom: 1px solid rgb(71, 71, 71); /* Adicione a borda inferior personalizada */
+                text-align: left;
+                background-color: transparent;
+                color: rgb(126, 125, 125);
+                margin-bottom: 0.1%;
+                margin-top: 1%;
+            }
+
+            .content-main-dark .section select:focus {
+                outline: none;
+            }
+
+            .content-main-dark .section input {
+                border: none;
+                border-bottom: 1px solid rgb(71, 71, 71);
+                background-color: transparent;
+                color: rgb(126, 125, 125);
+                resize: none; /* Remove a opção de redimensionamento */
+                border-radius: 3px;
+                padding: 0.5%;
+            }
+
+            .content-main-dark .section input:focus {
+                outline: none;
+            }
+
+            .content-main-dark h1 {
+                color: #ffffff;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .content-main-dark .section h1 {
+                color: #bbbaba;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .content-main-dark .section h2 {
+                color: #bbbaba;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .content-main-dark .section h3 {
+                color: #bbbaba;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .content-main-dark .section h4 {
+                color: #bbbaba;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .content-main-dark .section h5 {
+                color: #bbbaba;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .content-main-dark .section p {
+                color: #bbbaba;
+                margin-bottom: 2%;
+                margin-top: 2%;
+            }
+
+            .content-main-dark .section label {
+                color: rgb(163, 163, 163);
+            }
+
+            .content-main-dark .section span {
+                color: rgb(126, 125, 125);
+            }
+
+            .content-main-dark .section .input-modelo {
+                background-color: rgba(15, 15, 15, 0.1);
+            }
+
+            .content-main-dark .section .toggle-button {
+                border: 2px solid rgb(126, 125, 125);
+                color: rgb(126, 125, 125);
+            }
+
+            .content-main-dark .section .toggle-button:hover {
+                border: 2px solid #000000;
+                background-color: #000000;
+                color: white;
+            }
+
+            .content-main-dark .section .copy-button {
+                border: 2px solid rgb(126, 125, 125);
+                color: rgb(126, 125, 125);
+            }
+
+            .content-main-dark .section .copy-button:hover {
+                border: 2px solid #000000;
+                background-color: #000000;
+                color: white;
+            }
+
+            /*CONFIG ASIDE-NOTE*/
+
+            .aside-note {
+                position: fixed;
+                border-radius: 20px;
+                width: 25%;
+                height: 62%;
+                right: 1vw;
+                top: 2%;
+                padding: 13px;
+            }
+
+            .aside-note textarea {
+                width: 98%;
+                height: 40%;
+                border: none;
+                padding: 5px;
+                margin-top: 5px;
+                background-color: transparent;
+                color: rgb(126, 125, 125);
+                font-size: 15px;
+                font-family: "Calibri", sans-serif;
+                resize: none; /* Remove a opção de redimensionamento */
+            }
+
+            .aside-note textarea:focus {
+                outline: none;
+            }
+
+            .aside-note hr {
+                width: 100%;
+                margin: 10px 0;
+                border: none;
+                border-top: 1px solid #555;
+            }
+
+        /*FIM - CONTENT-MAIN*/
+
+        /*INICIO - ESTILO INPUT*/
+
+        .input-email {
+            position: absolute;
+            padding: 2%;
+            height: 6%;
+            width: 30%;
+            left: 0;
+            margin-left: 35%;
+        }
+
+        .input-email input{
+            padding: 2%;
+            width: 90%;;
+        }
+
+        .input-pecas {
+            position: absolute;
+            height: 3%;
+            width: 28%;
+            left: 0;
+            margin-left: 35%;
+        }
+
+        .input-modelo {
+            position: absolute;
+            padding: 2%;
+            height: flex;
+            width: 33%;
+            left: 0;
+            margin-left: 60%;
+            border: 1px solid #000000;
+            background-color: rgba(241, 241, 241, 0.1);
+            border-radius: 5px;
+        }
+
+        /*FIM - ESTILO INPUT*/
+
+        /*INICIO - ESTILO NOTIFY*/
+
+        .notification {
+            position: fixed;
+            bottom: 5vh;
+            right: 5%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(51, 51, 51, 0.8); /* Cor de fundo com transparência ajustada */
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid white;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .notification.show {
+            opacity: 1;
+        }
+
+        /*FIM - ESTILO NOTIFY*/
+
+        /*INICIO - ESTILO POP-UP*/
+
+        #overlay2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 9;
+        }
+
+        #note {
+            position: fixed;
+            top: 0;
+            left: 4.50%;
+            width: 96%;
+            height: 100%;
+            background-color: #F3F3F3;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            resize: none;
+            display: none;
+            z-index: 10;
+        }
+
+        #note textarea {
+            position: absolute;
+            left: 16%;
+            width: 65%;
+            height: 95%;
+            padding: 13px;
+            margin: 1%;
+            box-sizing: border-box;
+            border: 1px, #000;
+            background-color: #FFFFFF;
+            outline: none;
+            font-family: "Calibri", sans-serif;
+            font-size: 16px;
+            resize: none; /* Remove a opção de redimensionamento */
+        }
+
+        /*FIM - ESTILO POP-UP*/
+
+        /*INICIO - ESTILO FORMULÁRIO*/
+
+        .protocol-form {
+            background-color: #333;
+            position: fixed;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            top: 25%;
+            left: 42%;
+            height: flex;
+            width: 13%;
+            padding: 2%;
+            z-index: 20;
+        }
+
+        .input-label {
+            color: rgb(163, 163, 163);
+        }
+
+        .input-field {
+            border: none;
+            border-bottom: 1px solid rgb(71, 71, 71);
+            background-color: transparent;
+            color: rgb(126, 125, 125);
+            resize: none; /* Remove a opção de redimensionamento */
+            margin-top: 8px;
+            border-radius: 3px;
+            padding: 0.5%;
+            margin-bottom: 10%;
+        }
+
+        .input-field:focus {
+            outline: none;
+        }
+
+        .submit-button {
+            margin-left: 30%;
+            margin-bottom: 2px;
+            border: none;
+            background: none;
+            padding: 5px 10px;
+            font-size: 16px;
+            color: rgb(126, 125, 125);
+            cursor: pointer;
+            text-decoration: none;
+            border: 2px solid rgb(126, 125, 125);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .submit-button:focus {
+            outline: none;
+        }
+
+        .submit-button:hover {
+            border: 2px solid #000000;
+            background-color: #000000;
+            color: white;
+        }
+
+        .dark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Cor escura com 50% de transparência */
+            z-index: 19; /* Garante que a camada de escuridão fique acima de outros elementos */
+        }
+
+        .body-dark {
+            overflow: hidden; /* Impede que a rolagem seja ativada quando a camada de escuridão estiver presente */
+        }
+
+        /*FIM - ESTILO FORMULÁRIO*/
+
+        @media screen and (min-width: 2560px) and (max-width: 2560px) { /*Resolução de 2560px*/
+
+            .content-main {
+                width: 60vw;
+            }
+
+            .content-main-dark {
+                width: 60vw;
+            }
+
+            #note {
+                left: 2.4%;
+                width: 98%;
+            }
+
+            .toggle-menu { 
+                    left: 0.37%;
+            }
+
+            footer {
+                width: 99.42vw;
+            }
+
+            .aside-note {
+                width: 20%;
+            }
+        }
+
+        @media screen and (min-width: 1920px) and (max-width: 1920px) { /*Resolução de 1920px*/
+
+            .content-main {
+                width: 60vw;
+            }
+
+            .content-main-dark {
+                width: 60vw;
+            }
+
+            #note {
+                left: 3.20%;
+                width: 97%;
+            }
+
+            .toggle-menu { 
+                    left: 0.45%;
+            }
+            
+            footer {
+                width: 99.25vw;
+            }
+
+            .aside-note {
+                width: 25%;
+            }
+
+        }
+
+        @media screen and (min-width: 1366px) and (max-width: 1366x) { /*Resolução de 1366px*/
+
+            .content-main {
+                width: 60vw;
+            }
+
+            .content-main-dark {
+                width: 60vw;
+            }
+
+            #note {
+                left: 4.50%;
+            }
+
+            .toggle-menu { 
+                left: 0.75%;
+            }
+
+            footer {
+                width: 98.89vw;
+            }
+
+            .aside-note {
+                width: 25%;
+            }
+
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1280px) { /*Resolução acima de 1280px*/
+
+            .content-main {
+                width: 60vw;
+            }
+
+            .content-main-dark {
+                width: 60vw;
+            }
+
+            #note {
+                left: 4.80%;
+                width: 97%;
+            }
+
+            .toggle-menu { 
+                    left: 0.75%;
+            }
+
+            footer {
+                width: 98.85vw;
+            }
+
+            .aside-note {
+                width: 24%;
+            }   
+
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="toggle-menu" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
+            <div class="menu">
+                <div class="menu-items">
+                    <hr>
+                    <div class="div-a" onclick="toggleLayout()"><i class="theme-icon fa-solid fa-sun" title="Alterar Tema"></i></div>
+                    <hr>
+                    <a href="#section-inquerito"><i class="fas fa-scroll" title="Inquérito"></i></a>
+                    <a href="#section-resolucao"><i class="fas fa-scroll" title="Resolução"></i></a>
+                    <a href="#section-aberturaos"><i class="fas fa-scroll" title="Abertura de O.S"></i></a>
+                    <hr>
+                    <div onclick="insertProtocol()" title="Inserir Atendimento"><i class="div-a fa-solid fa-plus"></i></div>
+                    <div class="sticky-note" id="openNote"><i class="div-a far fa-light fa-sticky-note" title="Bloco de Notas"></i></div>
+                    <a href="https://www.samsung.com/br/" class="up-right" target="_blank"><i class="fas fa-external-link-alt" title="Ir para SAMSUNG.COM"></i></a>
+                    <a href="http://bloo.sdslacc.local/" class="up-right" target="_blank"><i class="fas fa-external-link-alt" title="Ir para o BLOO"></i></a>
+                    <hr>
+                    <div class="info-button" onclick="showInfo()"><i class="div-a fa-solid fa-circle-info" title="Informações"></i></div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="aside-note change-layout">
+            
+        <textarea id="cadastroinicial" spellcheck="false" onblur="restoreDefaultText()">
+NOME COMPLETO:
+CPF:
+DATA DE NASCIMENTO:
+E-MAIL:
+TELEFONE:
+PROTOCOLO:</textarea>
+
+            <hr>
+
+        <textarea id="bloconotas" rows="5" cols="50" placeholder="ANOTAÇÕES: (Salvamento Automático)" spellcheck="false" onblur="saveContent()"></textarea>
+    
+    </div>
+
+    <main class="content-main change-layout">
+
+        <h1>Suporte Técnico</h2>
+
+        <aside>
+
+                <div id="overlay2"></div>
+                <div id="note">
+                    <textarea placeholder="Digite suas anotações aqui" id="bloconotas2" spellcheck="false" onblur="save2Content()">
+                                ABAIXO É APENAS UM EXEMPLO, EDITE À VONTADE! SALVAMENTO AUTOMÁTICO!
+                    
+                CADASTRO SIMPLES
+        
+                    NOME COMPLETO:
+                    CPF:
+                    DATA DE NASCIMENTO:
+                    E-MAIL:
+                    TELEFONE:
+                    PROTOCOLO:
+         
+         
+         INQUÉRITO
+          
+                        CLIENTE INFORMA QUE  
+           
+         
+         ▪ CS VIEW:
+         ▪ S.A:
+         ▪ MARKETING:
+         ▪ PERMITIDO RETORNO DE LIGAÇÃO:
+         ▪ PERMITIDO PROTOCOLO POR SMS:
+          
+         RESOLUÇÃO 
+          
+                        CLIENTE INFORMA QUE 
+          
+                         
+                        📱 | VISUAL SUPORTE 
+           
+                                       📌 ETAPA – LAVA E SECA 
+                                                      ◽ VOLTAGEM DA TOMADA:
+                                                      ◽ USO DE ADAPTADOR/EXTENSÃO: 
+                                                      ◽ PARAFUSOS DE TRANSPORTE:
+                                                      ◽ ETIQUETA CONTENDO O MODELO/N° DE SÉRIE:
+                                                      ◽ PRESSÃO DA ÁGUA:
+                                                      ◽ NIVELAMENTO:
+                                                      ◽ MANGUEIRA DE DRENAGEM:
+                                                      ◽ LIMPEZA DO FILTRO DE DETRITOS:
+                                                      ◽ LIMPEZA DO FILTRO DA MANGUEIRA:
+                                                      ◽ CALIBRAÇÃO:
+                                                      ◽ LAVAGEM DO TAMBOR ECO:
+         
+          
+                        📱 | VISUAL SUPORTE 
+           
+                                       📌 ETAPA – REFRIGERADOR 
+                                                      ◽ VOLTAGEM DA TOMADA:
+                                                      ◽ USO DE ADAPTADOR/EXTENSÃO:
+                                                      ◽ ETIQUETA CONTENDO O MODELO/N° DE SÉRIE:
+                                                      ◽ PAINEL DE LED PISCANDO:
+                                                      ◽ BORRACHA DA PORTA:
+                                                      ◽ VEDAÇÃO DA PORTA:
+                                                      ◽ HOUVE QUEDA DE ENERGIA:
+         
+         
+                        📱 | VISUAL SUPORTE 
+           
+                                       📌 ETAPAS - AR-CONDICIONADO 
+                                                      ◽ VOLTAGEM DA TOMADA:
+                                                      ◽ USO DE ADAPTADOR/EXTENSÃO:
+                                                      ◽ TUBULAÇÃO DE COBRE:
+                                                      ◽ METRAGEM TUBULAÇÃO (3M – 15M):
+                                                      ◽ DISJUNTOR EXCLUSIVO:
+                                                      ◽ ETIQUETA CONTENDO O MODELO/N° DE SÉRIE:
+                                                      ◽ QUEDA DE ENERGIA:
+                                                      ◽ CONTROLE REMOTO:
+                                                      ◽ FILTRO:
+         
+                        📱 | VISUAL SUPORTE 
+           
+                                       📌 ETAPA - ASPIRADOR DE PÓ
+                                                      ◽ VOLTAGEM DA TOMADA:
+                                                      ◽ USO DE ADAPTADOR/EXTENSÃO:
+                                                      ◽ ESTAÇÃO DE LIMPEZA EM UM LOCAL NIVELADO:
+                                                      ◽ ETIQUETA CONTENDO O MODELO/N° DE SÉRIE:
+                                                      ◽ CONTROLE REMOTO (SE HOUVER):
+                                                      ◽ LIMPEZA DE MATERIAIS ESTRANHOS:
+         
+                        📱 | VISUAL SUPORTE 
+           
+                                       📌 ETAPA - LAVA-LOUÇAS
+                                                      ◽ VOLTAGEM DA TOMADA:
+                                                      ◽ USO DE ADAPTADOR/EXTENSÃO:
+                                                      ◽ NIVELAMENTO:
+                                                      ◽ MANGUEIRA DE DRENAGEM:
+                                                      ◽ USOU SOLVENTES OU PRODUTOS DE LIMPEZA ABRASIVOS:
+                                                      ◽ ETIQUETA CONTENDO O MODELO/N° DE SÉRIE:
+                                                      ◽ BORRACHA DA PORTA:
+                                                      ◽ VEDAÇÃO DA PORTA:
+                                                      ◽ LIMPEZA DO FILTRO:
+         
+         
+         🛠 ABERTURA DE ORDEM DE SERVIÇO 
+         
+                                       ◽ DADOS DO PRODUTO: 
+                                                      ◽ MODELO:
+                                                      ◽ N° DE SÉRIE:
+                                                      ◽ N° NOTA FISCAL:
+                                                      ◽ DATA DA COMPRA:
+                                                      ◽ EM GARANTIA:
+          
+                                       ▪ CLIENTE CIENTE QUE: 
+                                                      ▪ FORA DOS PADRÕES DE INSTALAÇÃO VISITA SERÁ COBRADA
+                                                      ▪ EM CASO DE INEXISTÊNCIA DE DEFEITO VISITA SERÁ COBRADA
+                                                      ▪ FORA DE GARANTIA – A VISITA, PEÇAS E MÃO DE OBRA SERÃO COBRADAS
+                                                      ▪ PRAZO DE 24 HORAS ÚTEIS PARA CONTATO DA ASSISTÊNCIA TÉCNICA
+                                                      ▪ NO ATO DA VISITA TÉCNICA DEVERÁ TER A NOTA FISCAL EM MÃOS</textarea>
+                </div>
+
+        </aside>
+
+        <div class="section">
+
+            <div id="section-inquerito">
+                <h2>Inquérito</h2>
+                    <textarea id="consumidor-resposta" spellcheck="false" placeholder="CLIENTE INFORMA QUE..."></textarea>
+
+                    <div class="input-email">
+
+                        <label>E-mail Antigo:</label><br>
+                            <input type="email" id="email-antigo-resposta" placeholder="Insira o E-mail antigo aqui!" autocomplete="off"><br><br>
+
+                        <label>Novo E-mail:</label><br>
+                            <input type="email" id="email-novo-resposta" placeholder="Insira o novo E-mail do cliente aqui!" autocomplete="off"><br><br>
+                    
+                    </div>
+    
+                    <label><i class="icon-importante fa-solid fa-circle-exclamation" title="IMPORTANTE"></i> CS VIEW:</label><br>
+                        <select id="cs-view-resposta">
+                            <option value="" text-align: center;>-- Selecione uma opção --</option>
+                            <option value="SUBIU - CONFIRMADO">SUBIU - CONFIRMADO</option>
+                            <option value="SUBIU - NO MATCH">SUBIU - NO MATCH</option>
+                            <option value="NÃO SUBIU">NÃO SUBIU</option>
+                        </select><br><br>
+    
+                    <label><i class="icon-importante fa-solid fa-circle-exclamation" title="IMPORTANTE"></i> S.A:</label><br>
+                        <select id="sa-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="POSSUI - ESTÁ VINCULADO">ESTÁ VINCULADO</option>
+                            <option value="POSSUI - NÃO PERMITIU VINCULAR">NÃO PERMITIU VINCULAR</option>
+                            <option value="POSSUI - FALHA AO VINCULAR">FALHA AO VINCULAR</option>
+                            <option value="NÃO POSSUI - FOI OFERTADO S.A">FOI OFERTADO</option>
+                        </select><br><br>
+    
+                    <label><i class="icon-importante fa-solid fa-circle-exclamation" title="IMPORTANTE"></i> Marketing:</label><br>
+                        <select id="marketing-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="PERMITIDO">PERMITIDO</option>
+                            <option value="NEGADO">NEGADO</option>
+                        </select><br><br>
+    
+                    <label><i class="icon-importante fa-solid fa-circle-exclamation" title="IMPORTANTE"></i> Permitido retorno de ligação:</label><br>
+                        <select id="retorno-ligacao-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="PERMITIDO">PERMITIDO</option>
+                            <option value="NEGADO">NEGADO</option>
+                        </select><br><br>
+    
+                    <label><i class="icon-importante fa-solid fa-circle-exclamation" title="IMPORTANTE"></i> Permitido protocolo por SMS:</label><br>
+                        <select id="protocolo-sms-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="PERMITIDO">PERMITIDO</option>
+                            <option value="NEGADO">NEGADO</option>
+                        </select><br><br>
+    
+                    <button class="copy-button" onclick="copyinquerito('inquerito')"><i class="fas fa-copy"></i></button>
+            </div>
+    
+            <!-- FIM - TÓPICO INQUÉRITO-->
+    
+            <!-- INICIO - TÓPICO RESOLUÇÃO -->
+    
+            <div id="section-resolucao">
+                <h2>Resolução</h2>
+                        <textarea id="informado-consumidor-resposta" spellcheck="false" placeholder="INFORMADO AO CLIENTE QUE..."></textarea>
+                
+                <button class="copy-button" onclick="copyResolution('Resolution')"><i class="fas fa-copy"></i></button>
+    
+                <h3>Visual Suporte</h3>
+    
+                <button class="toggle-button" onclick="toggleContent('lavadoraoculta')"><i class="fas fa-eye"></i> Lavadora</button>
+                <button class="toggle-button" onclick="toggleContent('refrigeradoroculta')"><i class="fas fa-eye"></i> Refrigerador</button>
+                <button class="toggle-button" onclick="toggleContent('acnoculta')"><i class="fas fa-eye"></i> Ar Condicionado</button>
+                <button class="toggle-button" onclick="toggleContent('powerbotoculta')"><i class="fas fa-eye"></i> PowerBot</button>
+                <button class="toggle-button" onclick="toggleContent('loucaoculta')"><i class="fas fa-eye"></i> Lava-Louças</button>
+                
+                <!-- INICIO - LAVA E SECA -->
+    
+                <div class="content" id="lavadoraoculta">
+    
+                    <h4>ETAPA - LAVA E SECA</h4>
+
+                        <div class="input-modelo">
+                            <label>Modelos Comercializados no Brasil:</label><br><br>
+                            <span>AZ (Tensão 127V)</span><br><br>
+                            <span>FAZ (Tensão 220V)</span>
+                        </div>
+    
+                        <label>Voltagem da Tomada:</label><br>
+                        <select id="tomada-voltagem-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="220v">220v</option>
+                            <option value="127v">127v</option>
+                            <option value="110v">110v</option>
+                            <option value="CLIENTE NÃO SABE">N/A</option>
+                        </select><br><br>
+    
+                        <label>Uso de Adaptador/Extensão:</label><br>
+                            <select id="adaptador-extensao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Parafusos de Transporte:</label><br>
+                            <select id="parafusos-transporte-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="NÃO FOI REMOVIDO">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Pressão da Água:</label><br>
+                            <select id="pressao-agua-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Nivelamento:</label><br>
+                            <select id="nivelamento-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Mangueira de Drenagem:</label><br>
+                            <select id="mangueira-drenagem-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="ESTÁ EM DESACORDO COM MANUAL">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Etiqueta contendo o Modelo e/ou N° de Série:</label><br>
+                            <select id="etiqueta-modelo-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="RASURADA/ACOPLADA">RASURADA/ACOPLADA</option>
+                            </select><br><br>
+    
+                        <label>Limpeza do Filtro de Detritos:</label><br>
+                            <select id="limpeza-filtro-detrimentos-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+    
+                        <label>Limpeza do Filtro da Mangueira:</label><br>
+                            <select id="limpeza-filtro-mangueira-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+    
+                        <label>Calibração:</label><br>
+                            <select id="calibracao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+    
+                        <label>Lavagem do Tambor Eco:</label><br>
+                            <select id="lavagem-tambor-eco-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+    
+                    <button class="copy-button" onclick="copyLavaSeca('LavaSeca')"><i class="fas fa-copy"></i></button><br><br>
+                </div>
+    
+                <!-- FIM - LAVA E SECA -->
+    
+                <!-- INICIO - REFRIGERADOR -->
+    
+                <div class="content" id="refrigeradoroculta">
+    
+                    <h4>ETAPA - REFRIGERADOR</h4>
+
+                        <div class="input-modelo">
+                            <label>Modelos Comercializados no Brasil:</label><br><br>
+                            <span>AZ (Tensão 127V)</span><br><br>
+                            <span>BZ (Tensão 220V)</span><br><br>
+                            <span>FZ (BiVolt)</span>
+                        </div>
+
+                        <label>Voltagem da Tomada:</label><br>
+                            <select id="refrigerador-tomada-voltagem-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="220v">220v</option>
+                                <option value="127v">127v</option>
+                                <option value="110v">110v</option>
+                                <option value="CLIENTE NÃO SABE">N/A</option>
+                            </select><br><br>
+    
+                        <label>Uso de Adaptador/Extensão:</label><br>
+                            <select id="refrigerador-adaptador-extensao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Etiqueta contendo o Modelo e/ou N° de Série:</label><br>
+                            <select id="refrigerador-etiqueta-modelo-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="RASURADA/ACOPLADA">RASURADA/ACOPLADA</option>
+                            </select><br><br>
+    
+                        <label>Painel de Led Piscando:</label><br>
+                            <select id="painel-led-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Borracha da Porta:</label><br>
+                            <select id="borracha-porta-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Vedação da Porta:</label><br>
+                            <select id="vedacao-porta-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Houve queda de Energia:</label><br>
+                            <select id="queda-energia-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                    <button class="copy-button" onclick="copyRefrigerador('Refrigerador')"><i class="fas fa-copy"></i></button><br><br>
+                </div>
+    
+                <!-- FIM - REFRIGERADOR -->
+    
+                <!-- INICIO - AR CONDICIONADO -->
+    
+                <div class="content" id="acnoculta">
+                    <h4>ETAPA - AR-CONDICIONADO</h4>
+
+                        <div class="input-modelo">
+                            <label>Modelos Comercializados no Brasil:</label><br><br>
+                            <span>AZ</span><br><br>
+                            <span>Todos os produtos são 220v</span>
+                        </div>
+
+                        <label>Voltagem da Tomada:</label><br>
+                            <select id="arcondicionado-tomada-voltagem-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="220v">220v</option>
+                                <option value="127v">127v</option>
+                                <option value="110v">110v</option>
+                                <option value="CLIENTE NÃO SABE">N/A</option>
+                            </select><br><br>
+    
+                        <label>Uso de Adaptador/Extensão:</label><br>
+                            <select id="arcondicionado-adaptador-extensao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Tubulação de Cobre:</label><br>
+                            <select id="tubulacao-cobre-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Metragem da Tubulação (3M – 15M):</label><br>
+                            <select id="metragem-tubulacao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Disjuntor Exclusivo:</label><br>
+                            <select id="disjuntor-exclusivo-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Etiqueta contendo o Modelo e/ou N° de Série:</label><br>
+                            <select id="arcondicionado-etiqueta-modelo-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="RASURADA/ACOPLADA">RASURADA/ACOPLADA</option>
+                            </select><br><br>
+    
+                        <label>Houve queda de Energia:</label><br>
+                            <select id="arcondicionado-queda-energia-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Controle Remoto:</label><br>
+                            <select id="controle-remoto-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="FUNCIONA">FUNCIONA</option>
+                                <option value="NÃO FUNCIONA">NÃO FUNCIONA</option>
+                            </select><br><br>
+    
+                        <label>Limpeza do Filtro:</label><br>
+                            <select id="filtro-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="LIMPEZA FEITA NAS ÚLTIMAS 2 SEMANAS">OK</option>
+                                <option value="LIMPEZA NÃO FOI REALIZADA">NÃO FOI LIMPO</option>
+                            </select><br><br>
+
+                        <label>Manutenção Periódica:</label><br>
+                            <select id="manutencao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="MANUTENÇÃO REALIZADA NOS ÚLTIMOS 4 MESES">DENTRO DOS 4 MESES</option>
+                                <option value="MANUTENÇÃO NÃO FOI REALIZADA NOS ÚLTIMOS 4 MESES">NÃO FOI REALIZADA</option>
+                            </select><br><br>
+            
+                    <button class="copy-button" onclick="copyArCondicionado('ArCondicionado')"><i class="fas fa-copy"></i></button>
+                </div>
+    
+                <!-- FIM - AR CONDICIONADO -->
+    
+                <!-- INICIO - POWERBOT -->
+    
+                <div class="content" id="powerbotoculta">
+                    <h4>ETAPA - ASPIRADOR DE PÓ</h4>
+
+                        <div class="input-modelo">
+                            <label>Modelos Comercializados no Brasil:</label><br><br>
+                            <span>AZ (Tensão 127V)</span><br><br>
+                            <span>BZ (Tensão 220V)</span>
+                        </div>
+
+                        <label>Voltagem da Tomada:</label><br>
+                            <select id="powerbot-tomada-voltagem-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="220v">220v</option>
+                                <option value="127v">127v</option>
+                                <option value="110v">110v</option>
+                                <option value="CLIENTE NÃO SABE">N/A</option>
+                            </select><br><br>
+    
+                        <label>Uso de Adaptador/Extensão:</label><br>
+                            <select id="powerbot-adaptador-extensao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Estação de limpeza em um local nivelado:</label><br>
+                            <select id="powerbot-nivelamento-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Etiqueta contendo o Modelo e/ou N° de Série:</label><br>
+                            <select id="powerbot-etiqueta-modelo-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="RASURADA">RASURADA</option>
+                            </select><br><br>
+    
+                        <label>Controle Remoto (Se houver):</label><br>
+                            <select id="powerbotcontrole-remoto-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="FUNCIONA">FUNCIONA</option>
+                                <option value="NÃO FUNCIONA">NÃO FUNCIONA</option>
+                            </select><br><br>
+    
+                        <label>Limpeza de Materiais Estranhos:</label><br>
+                            <select id="powerbot-limpeza-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+            
+                    <button class="copy-button" onclick="copyPowerBot('PowerBot')"><i class="fas fa-copy"></i></button>
+                </div>
+    
+                <!-- FIM - POWERBOT -->
+    
+                <!-- INICIO - LAVA-LOUÇAS -->
+    
+                <div class="content" id="loucaoculta">
+                    <h4>ETAPA - LAVA-LOUÇAS</h4>
+
+                    <div class="input-modelo">
+                        <label>Modelos Comercializados no Brasil:</label><br><br>
+                        <span>AZ (Tensão 127V)</span><br>
+                    </div>
+
+                        <label>Voltagem da Tomada:</label><br>
+                            <select id="louca-tomada-voltagem-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="220v">220v</option>
+                                <option value="127v">127v</option>
+                                <option value="110v">110v</option>
+                                <option value="CLIENTE NÃO SABE">N/A</option>
+                            </select><br><br>
+    
+                        <label>Uso de Adaptador/Extensão:</label><br>
+                            <select id="louca-adaptador-extensao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Nivelamento:</label><br>
+                            <select id="louca-nivelamento-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Mangueira de Drenagem:</label><br>
+                            <select id="louca-dreno-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="ESTÁ EM DESACORDO COM O MANUAL">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Etiqueta contendo o Modelo e/ou N° de Série:</label><br>
+                            <select id="louca-etiqueta-modelo-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="RASURADA/ACOPLADA">RASURADA/ACOPLADA</option>
+                            </select><br><br>
+    
+                        <label>Usou solventes ou produtos de limpeza abrasivos:</label><br>
+                            <select id="louca-solventes-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Borracha da Porta:</label><br>
+                            <select id="loucaborracha-porta-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Vedação da Porta:</label><br>
+                            <select id="loucavedacao-porta-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Limpeza do Filtro:</label><br>
+                            <select id="louca-filtro-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+            
+                    <button class="copy-button" onclick="copyLavaLouca('LavaLouca')"><i class="fas fa-copy"></i></button>
+                </div>
+    
+                <!-- FIM - LAVA-LOUÇAS -->
+    
+            </div>
+    
+            <!-- FIM - TÓPICO RESOLUÇÃO-->
+    
+            <!-- INICIO - ABERTURA O.S -->
+    
+            <div id="section-aberturaos" style="margin-top: 5%;">
+    
+                <h2>Abertura de Ordem de Serviço</h2>
+
+                    <h5>DADOS DO PRODUTO</h5>
+
+                    <div class="input-pecas">
+                        <label>Ferramenta - BUSCAR PEÇAS:</label><br>
+                        <select id="buscar-pecas-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="NÃO HÁ SINTOMA DISPONÍVEL NA FERRAMENTA">NÃO TEM SINTOMA</option>
+                            <option value="NÃO HÁ MODELO NA FERRAMENTA">NÃO TEM MODELO</option>
+                        </select>
+                    </div>
+
+                    <label>Modelo:</label><br>
+                        <input type="text" id="modelo-resposta"><br><br>
+
+                    <label>N° de Série:</label><br>
+                        <input type="text" id="numero-serie-resposta"><br><br>
+    
+                    <label>N° Nota Fiscal:</label><br>
+                        <input type="text" id="nota-fiscal-resposta"><br><br>
+    
+                    <label>Data da Compra:</label><br>
+                        <input type="date" id="data-compra-resposta" placeholder="dd/mm/aaaa"><br><br>
+    
+                    <label>Em Garantia:</label><br>
+                        <select id="garantia-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="PROVÁVEL DENTRO">PROVÁVEL DENTRO</option>
+                            <option value="PROVÁVEL FORA">PROVÁVEL FORA</option>
+                        </select><br><br>
+    
+                    <button class="copy-button" onclick="copyOrdemServico('OrdemServico')"><i class="fas fa-copy"></i></button>
+    
+                    
+                    <h4>CLIENTE CIENTE QUE:</h4>
+                        <p>FORA DOS PADRÕES DE INSTALAÇÃO VISITA SERÁ COBRADA:</p>
+                        <p>EM CASO DE INEXISTÊNCIA DE DEFEITO VISITA SERÁ COBRADA:</p>
+                        <p>FORA DE GARANTIA - A VISITA, PEÇAS E MÃO DE OBRA SERÃO COBRADAS:</p>
+                        <p>PRAZO DE 24 HORAS ÚTEIS PARA CONTATO DA ASSISTÊNCIA TÉCNICA:</p>
+                        <p>NO ATO DA VISITA TÉCNICA DEVERÁ TER A NOTA FISCAL EM MÃOS:</p>
+    
+            </div>   
+
+        </div>
+
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <footer>
+        <p onclick="showDeveloperMessage()">&copy; 2023 CroxisDev. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+
+    // INICIO - EXIBE/OCULTA O MENU
+
+        function toggleMenu() {
+                const menu = document.querySelector('.menu');
+                menu.classList.toggle('hidden');
+            }
+
+    // FIM - EXIBE/OCULTA O MENU
+
+    // INICIO - INFO DEVELOPER
+
+        function showInfo() {
+            Swal.fire({
+                title: '<p class="dev-color">Informação</p>',
+                html: '<p class="dev-color">Last Version: 23.06.25.Dev</p><br> <p>Essa página não salva dados externamente!</p><br> <p class="dev-color">Dúvidas? Contate o <span class="developer-text" onclick="showDeveloperMessage()">Desenvolvedor!</span></p>',
+                icon: 'info',
+                customClass: 'dev-info'  
+            });
+        }
+
+        // Função para exibir a mensagem do desenvolvedor
+        function showDeveloperMessage() {
+            Swal.fire({
+                title: '<p class="dev-color">Desenvolvedor</p>',
+                html: '<p class="dev-color">Felipe Mendes - RE: 1460500</p> <span style="color: red;">Entre em contato via Teams</span>',
+                confirmButtonText: 'Fechar',
+                customClass:'dev-info' 
+            })
+        }
+
+    // FIM - INFO DEVELOPER
+
+    // INICIO - Restaurar Texto do CADASTRO INICIAL
+
+        var textarea = document.getElementById("cadastroinicial");
+        var defaultText = "NOME COMPLETO:\nCPF:\nDATA DE NASCIMENTO:\nE-MAIL:\nTELEFONE:\nPROTOCOLO:";
+
+        function restoreDefaultText() {
+            if (textarea.value === "") {
+            textarea.value = defaultText;
+            }
+        }
+
+    // FIM - Restaurar Texto do CADASTRO INICIAL
+
+    // INICIO - SALVAR TEXTO DO ANOTAÇÃO
+
+        function saveContent() {
+                var textarea = document.getElementById("bloconotas");
+                var content = textarea.value;
+                localStorage.setItem("savedContent", content);
+                console.log("Conteúdo salvo: " + content);
+            }
+
+            function restoreContent() {
+                var textarea = document.getElementById("bloconotas");
+                if (localStorage.getItem("savedContent")) {
+                        textarea.value = localStorage.getItem("savedContent");
+                }
+            }
+
+            restoreContent();
+
+    // FIM - SALVAR TEXTO DO ANOTAÇÃO
+
+    // INICIO - ROLAGEM SUAVE AO CLICAR EM HREF
+    
+        document.querySelectorAll('.menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                    });
+                }
+                } else {
+                window.open(href, '_blank');
+                }
+            });
+        });
+
+    // FIM - ROLAGEM SUAVE AO CLICAR EM HREF
+
+    // INICIO - TEXTO EM CAIXA ALTA TEXTAREA SECTION
+
+        var textareas = document.querySelectorAll('.section textarea');
+
+        textareas.forEach(function(textarea) {
+        textarea.addEventListener('input', function() {
+            var start = this.selectionStart;
+            var end = this.selectionEnd;
+
+            this.value = this.value.toUpperCase();
+
+            this.setSelectionRange(start, end);
+        });
+        });
+
+    // FIM - TEXTO EM CAIXA ALTA TEXTAREA SECTION
+
+    // INICIO - SCRIPT PARA OCULTAR LAVADORA, REFRIGERADOR, ACN, POWERBOT E LAVA-LOUÇAS
+
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            var buttons = document.getElementsByClassName('toggle-button');
+            var isContentVisible = content.style.display === 'block';
+
+            for (var i = 0; i < buttons.length; i++) {
+                var button = buttons[i];
+                var targetId = button.getAttribute('onclick').replace("toggleContent('", "").replace("')", "");
+                var targetContent = document.getElementById(targetId);
+
+                if (targetContent !== content) {
+                targetContent.style.display = 'none';
+                }
+            }
+
+            if (!isContentVisible) {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+    // FIM - SCRIPT PARA OCULTAR LAVADORA, REFRIGERADOR, ACN, POWERBOT E LAVA-LOUÇAS
+
+    // INICIO - FUNÇÃO COPIAR TEXTO
+
+        function copyToClipboard(text) {
+                const input = document.createElement('textarea');
+                input.value = text;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+        }
+
+        // COPIAR INQUÉRITO
+
+        function copyinquerito() {
+            const consumidorInfo = document.getElementById('consumidor-resposta').value;
+            const csView = document.getElementById('cs-view-resposta').value;
+            const emailnew = document.getElementById('email-novo-resposta').value;
+            const emailold = document.getElementById('email-antigo-resposta').value;
+            const sa = document.getElementById('sa-resposta').value;
+            const marketing = document.getElementById('marketing-resposta').value;
+            const retornoLigacao = document.getElementById('retorno-ligacao-resposta').value;
+            const protocoloSms = document.getElementById('protocolo-sms-resposta').value;
+
+            let copiedText = `${consumidorInfo}\n
+        CS VIEW: ${csView}
+        S.A: ${sa}
+        MARKETING: ${marketing}
+        PERMITIDO RETORNO DE LIGAÇÃO: ${retornoLigacao}
+        PERMITIDO PROTOCOLO POR SMS: ${protocoloSms}`;
+
+        if (emailold !== '') {
+            copiedText += `\n\n        E-mail Antigo: ${emailold}`;
+        }
+
+        if (emailnew !== '') {
+            copiedText += `\n        Novo E-mail: ${emailnew}`;
+        }
+
+            copyToClipboard(copiedText);
+
+            showNotification('Texto copiado!');
+        }
+
+            // COPIAR RESOLUÇÃO
+
+            function copyResolution() {
+            const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+            const copiedText = `${resolutionConsu}`;
+
+            copyToClipboard(copiedText);
+
+            showNotification('Texto copiado!');
+        }
+
+        // COPIAR LAVA E SECA
+
+        function copyLavaSeca() {
+            const voltagemTomada = document.getElementById('tomada-voltagem-resposta').value;
+            const usoAdaptador = document.getElementById('adaptador-extensao-resposta').value;
+            const parafusotrans = document.getElementById('parafusos-transporte-resposta').value;
+            const pressaoagua = document.getElementById('pressao-agua-resposta').value;
+            const nivelapiso = document.getElementById('nivelamento-resposta').value;
+            const mangueiradrena = document.getElementById('mangueira-drenagem-resposta').value;
+            const modelolava = document.getElementById('etiqueta-modelo-resposta').value;
+            const filtrodetrito = document.getElementById('limpeza-filtro-detrimentos-resposta').value;
+            const filtromangueira = document.getElementById('limpeza-filtro-mangueira-resposta').value;
+            const calibralava = document.getElementById('calibracao-resposta').value;
+            const tamboreco = document.getElementById('lavagem-tambor-eco-resposta').value;
+            const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+        let copiedText = `${resolutionConsu}\n
+        ➤ | VISUAL SUPORTE - LAVA E SECA`;
+
+        if (voltagemTomada !== '') {
+            copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
+        }
+
+        if (usoAdaptador !== '') {
+            copiedText += `\n           • USO DE ADAPTADOR/EXTENSÃO: ${usoAdaptador}`;
+        }
+
+        if (parafusotrans !== '') {
+            copiedText += `\n           • PARAFUSOS DE TRANSPORTE: ${parafusotrans}`;
+        }
+
+        if (pressaoagua !== '') {
+            copiedText += `\n           • PRESSÃO DA ÁGUA: ${pressaoagua}`;
+        }
+
+        if (nivelapiso !== '') {
+            copiedText += `\n           • NIVELAMENTO: ${nivelapiso}`;
+        }
+
+        if (mangueiradrena !== '') {
+            copiedText += `\n           • MANGUEIRA DE DRENAGEM: ${mangueiradrena}`;
+        }
+
+        if (modelolava !== '') {
+            copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE:${modelolava}`;
+        }
+
+        if (filtrodetrito !== '') {
+            copiedText += `\n           • LIMPEZA DO FILTRO DE DETRITOS: ${filtrodetrito}`;
+        }
+
+        if (filtromangueira !== '') {
+            copiedText += `\n           • LIMPEZA DO FILTRO DA MANGUEIRA: ${filtromangueira}`;
+        }
+
+        if (calibralava !== '') {
+            copiedText += `\n           • CALIBRAÇÃO: ${calibralava}`;
+        }
+
+        if (tamboreco !== '') {
+            copiedText += `\n           • LAVAGEM DO TAMBOR ECO: ${tamboreco}`;
+        }
+
+        copyToClipboard(copiedText);
+
+        showNotification('Texto copiado!');
+
+        }
+
+        // COPIAR REFRIGERADOR
+
+        function copyRefrigerador() {
+            const voltagemTomada = document.getElementById('refrigerador-tomada-voltagem-resposta').value;
+            const usoAdaptador = document.getElementById('refrigerador-adaptador-extensao-resposta').value;
+            const refrimodelo = document.getElementById('refrigerador-etiqueta-modelo-resposta').value;
+            const refripainel = document.getElementById('painel-led-resposta').value;
+            const refriporta = document.getElementById('borracha-porta-resposta').value;
+            const refrivedaporta = document.getElementById('vedacao-porta-resposta').value;
+            const refriquedaenergia = document.getElementById('queda-energia-resposta').value;
+            const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+        let copiedText = `${resolutionConsu}\n
+        ➤ | VISUAL SUPORTE - REFRIGERADOR`;
+
+        if (voltagemTomada !== '') {
+            copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
+        }
+
+        if (usoAdaptador !== '') {
+            copiedText += `\n           • USO DE ADAPTADOR/EXTENSÃO: ${usoAdaptador}`;
+        }
+
+        if (refrimodelo !== '') {
+            copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE: ${refrimodelo}`;
+        }
+
+        if (refripainel !== '') {
+            copiedText += `\n           • PAINEL DE LED PISCANDO: ${refripainel}`;
+        }
+
+        if (refriporta !== '') {
+            copiedText += `\n           • BORRACHA DA PORTA: ${refriporta}`;
+        }
+
+        if (refrivedaporta !== '') {
+            copiedText += `\n           • VEDAÇÃO DA PORTA: ${refrivedaporta}`;
+        }
+
+        if (refriquedaenergia !== '') {
+            copiedText += `\n           • QUEDA DE ENERGIA: ${refriquedaenergia}`;
+        }
+
+        copyToClipboard(copiedText);
+
+        showNotification('Texto copiado!');
+
+        }
+
+        // COPIAR AR CONDICIONADO
+
+        function copyArCondicionado() {
+            const voltagemTomada = document.getElementById('arcondicionado-tomada-voltagem-resposta').value;
+            const usoAdaptador = document.getElementById('arcondicionado-adaptador-extensao-resposta').value;
+            const arcobre = document.getElementById('tubulacao-cobre-resposta').value;
+            const armetragem = document.getElementById('metragem-tubulacao-resposta').value;
+            const ardisjuntor = document.getElementById('disjuntor-exclusivo-resposta').value;
+            const armodelo = document.getElementById('arcondicionado-etiqueta-modelo-resposta').value;
+            const arquedaenergia = document.getElementById('arcondicionado-queda-energia-resposta').value;
+            const arcontrole = document.getElementById('controle-remoto-resposta').value;
+            const arfiltro = document.getElementById('filtro-resposta').value;
+            const armanu = document.getElementById('manutencao-resposta').value;
+            const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+        let copiedText = `${resolutionConsu}\n
+        ➤ | VISUAL SUPORTE - AR CONDICIONADO`;
+
+        if (voltagemTomada !== '') {
+            copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
+        }
+
+        if (usoAdaptador !== '') {
+            copiedText += `\n           • USO DE ADAPTADOR/EXTENSÃO: ${usoAdaptador}`;
+        }
+
+        if (arcobre !== '') {
+            copiedText += `\n           • TUBULAÇÃO DE COBRE: ${arcobre}`;
+        }
+
+        if (armetragem !== '') {
+            copiedText += `\n           • METRAGEM TUBULAÇÃO (3M – 15M): ${armetragem}`;
+        }
+
+        if (ardisjuntor !== '') {
+            copiedText += `\n           • DISJUNTOR EXCLUSIVO: ${ardisjuntor}`;
+        }
+
+        if (armodelo !== '') {
+            copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE: ${armodelo}`;
+        }
+
+        if (arquedaenergia !== '') {
+            copiedText += `\n           • QUEDA DE ENERGIA: ${arquedaenergia}`;
+        }
+
+        if (arcontrole !== '') {
+            copiedText += `\n           • CONTROLE REMOTO: ${arcontrole}`;
+        }
+
+        if (arfiltro !== '') {
+            copiedText += `\n           • LIMPEZA DO FILTRO: ${arfiltro}`;
+        }
+
+        if (armanu !== '') {
+            copiedText += `\n           • MANUTENÇÃO PERIÓDICA: ${armanu}`;
+        }
+
+        copyToClipboard(copiedText);
+
+        showNotification('Texto copiado!');
+
+        }
+
+        // COPIAR POWERBOT
+
+        function copyPowerBot() {
+            const voltagemTomada = document.getElementById('powerbot-tomada-voltagem-resposta').value;
+            const usoAdaptador = document.getElementById('powerbot-adaptador-extensao-resposta').value;
+            const powernivel = document.getElementById('powerbot-nivelamento-resposta').value;
+            const pwmodelo = document.getElementById('powerbot-etiqueta-modelo-resposta').value;
+            const pwcontrole = document.getElementById('powerbotcontrole-remoto-resposta').value;
+            const pwlimpeza = document.getElementById('powerbot-limpeza-resposta').value;
+            const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+        let copiedText = `${resolutionConsu}\n
+        ➤ | VISUAL SUPORTE - ASPIRADOR DE PÓ`;
+
+        if (voltagemTomada !== '') {
+            copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
+        }
+
+        if (usoAdaptador !== '') {
+            copiedText += `\n           • USO DE ADAPTADOR/EXTENSÃO: ${usoAdaptador}`;
+        }
+
+        if (powernivel !== '') {
+            copiedText += `\n           • ESTAÇÃO DE LIMPEZA EM UM LOCAL NIVELADO: ${powernivel}`;
+        }
+
+        if (pwmodelo !== '') {
+            copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE: ${pwmodelo}`;
+        }
+
+        if (pwcontrole !== '') {
+            copiedText += `\n           • CONTROLE REMOTO: ${pwcontrole}`;
+        }
+
+        if (pwlimpeza !== '') {
+            copiedText += `\n           • LIMPEZA DE MATERIAIS ESTRANHOS: ${pwlimpeza}`;
+        }
+
+        copyToClipboard(copiedText);
+
+        showNotification('Texto copiado!');
+
+        }
+
+        // COPIAR LAVA-LOUÇAS
+
+        function copyLavaLouca() {
+            const voltagemTomada = document.getElementById('louca-tomada-voltagem-resposta').value;
+            const usoAdaptador = document.getElementById('louca-adaptador-extensao-resposta').value;
+            const loucanivel = document.getElementById('louca-nivelamento-resposta').value;
+            const loucadreno = document.getElementById('louca-dreno-resposta').value;
+            const loucamodelo = document.getElementById('louca-etiqueta-modelo-resposta').value;
+            const loucasolvente = document.getElementById('louca-solventes-resposta').value;
+            const loucaborracha = document.getElementById('loucaborracha-porta-resposta').value;
+            const loucaveda = document.getElementById('loucavedacao-porta-resposta').value;
+            const loucafiltro = document.getElementById('louca-filtro-resposta').value;
+            const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+        let copiedText = `${resolutionConsu}\n
+        ➤ | VISUAL SUPORTE - LAVA-LOUÇAS`;
+
+        if (voltagemTomada !== '') {
+            copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
+        }
+
+        if (usoAdaptador !== '') {
+            copiedText += `\n           • USO DE ADAPTADOR/EXTENSÃO: ${usoAdaptador}`;
+        }
+
+        if (loucanivel !== '') {
+            copiedText += `\n           • NIVELAMENTO: ${loucanivel}`;
+        }
+
+        if (loucadreno !== '') {
+            copiedText += `\n           • MANGUEIRA DE DRENAGEM: ${loucadreno}`;
+        }
+
+        if (loucamodelo !== '') {
+            copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE: ${loucamodelo}`;
+        }
+
+        if (loucasolvente !== '') {
+            copiedText += `\n           • USOU SOLVENTES OU PRODUTOS DE LIMPEZA ABRASIVOS: ${loucasolvente}`;
+        }
+
+        if (loucaborracha !== '') {
+            copiedText += `\n           • BORRACHA DA PORTA: ${loucaborracha}`;
+        }
+
+        if (loucaveda !== '') {
+            copiedText += `\n           • VEDAÇÃO DA PORTA: ${loucaveda}`;
+        }
+
+        if (loucafiltro !== '') {
+            copiedText += `\n           • LIMPEZA DO FILTRO: ${loucafiltro}`;
+        }
+
+        copyToClipboard(copiedText);
+
+        showNotification('Texto copiado!');
+
+        }
+
+        // COPIAR ORDEM DE SERVIÇO
+
+        function copyOrdemServico() {
+            const modelo = document.getElementById('modelo-resposta').value;
+            const numeroSerie = document.getElementById('numero-serie-resposta').value;
+            const notaFiscal = document.getElementById('nota-fiscal-resposta').value;
+            const emGarantia = document.getElementById('garantia-resposta').value;
+            const buscarpecas = document.getElementById('buscar-pecas-resposta').value;
+            const dataCompraElement = document.getElementById('data-compra-resposta');
+            const dataCompraValue = dataCompraElement.value;
+
+        let dataCompra = '';
+
+        if (dataCompraValue) {
+            const [ano, mes, dia] = dataCompraValue.split('-');
+            dataCompra = `${dia}/${mes}/${ano}`;
+        }
+
+        let copiedText = `${buscarpecas}\n\n    ABERTURA DE ORDEM DE SERVIÇO\n\n        ✍| DADOS DO PRODUTO\n`;
+
+        if (modelo !== '') {
+            copiedText += `\n           • MODELO: ${modelo}`;
+        }
+
+        if (numeroSerie !== '') {
+            copiedText += `\n           • N° DE SÉRIE: ${numeroSerie}`;
+        }
+
+        if (notaFiscal !== '') {
+            copiedText += `\n           • N° NOTA FISCAL: ${notaFiscal}`;
+        }
+
+        if (dataCompra !== '') {
+            copiedText += `\n           • DATA DA COMPRA: ${dataCompra}`;
+        }
+
+        if (emGarantia !== '') {
+            copiedText += `\n           • GARANTIA: ${emGarantia}`;
+        }
+
+        copiedText += `\n
+            CLIENTE CIENTE QUE:
+                FORA DOS PADRÕES DE INSTALAÇÃO VISITA SERÁ COBRADA;
+                EM CASO DE INEXISTÊNCIA DE DEFEITO VISITA SERÁ COBRADA;
+                FORA DE GARANTIA - A VISITA, PEÇAS E MÃO DE OBRA SERÃO COBRADAS;
+                PRAZO DE 24 HORAS ÚTEIS PARA CONTATO DA ASSISTÊNCIA TÉCNICA;
+                NO ATO DA VISITA TÉCNICA DEVERÁ TER A NOTA FISCAL EM MÃOS.`;
+
+        copyToClipboard(copiedText);
+
+        showNotification('Texto copiado!');
+
+        }
+
+    // FIM - FUNÇÃO COPIAR TEXTO
+
+    // INICIO - ALTERAR COR DA DIV PRINCIPAL
+
+        var themeIcons = document.getElementsByClassName('theme-icon');
+        var theme = localStorage.getItem('theme') || 'light'; // Recuperar o tema salvo ou definir o tema inicial como "light"
+
+        applyTheme(); // Aplicar o tema ao carregar a página
+
+        function toggleLayout() {
+            if (theme === 'light') {
+                theme = 'dark';
+            } else {
+                theme = 'light';
+            }
+        
+        localStorage.setItem('theme', theme); // Salvar o tema escolhido pelo usuário
+        
+        applyTheme(); // Aplicar o tema após o clique no botão
+        }
+
+        function applyTheme() {
+            for (var i = 0; i < themeIcons.length; i++) {
+                themeIcons[i].classList.remove('fa-sun', 'fa-moon');
+                if (theme === 'light') {
+                themeIcons[i].classList.add('fa-sun');
+                } else {
+                themeIcons[i].classList.add('fa-moon');
+                }
+            }
+            
+            var elements = document.querySelectorAll('.change-layout');
+            elements.forEach(function(element) {
+                element.classList.toggle('content-main', theme === 'light');
+                element.classList.toggle('content-main-dark', theme === 'dark');
+            });
+            }
+
+    // FIM - ALTERAR COR DA DIV PRINCIPAL
+
+    // INICIO - NOTIFY
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.innerText = message;
+            notification.classList.add('show');
+            notification.innerHTML = message;
+
+            setTimeout(function() {
+                notification.classList.remove('show');
+            }, 3000);
+            }
+
+    // FIM - NOTIFY
+
+    // INICIO - SALVAR TEXTO BIG POP-UP
+
+        function save2Content() {
+                var textarea = document.getElementById("bloconotas2");
+                var content = textarea.value;
+                localStorage.setItem("saved2Content", content);
+                console.log("Conteúdo salvo: " + content);
+            }
+
+            function restore2Content() {
+                var textarea = document.getElementById("bloconotas2");
+                if (localStorage.getItem("saved2Content")) {
+                        textarea.value = localStorage.getItem("saved2Content");
+                }
+            }
+
+            restore2Content();
+
+    // FIM - SALVAR TEXTO BIG POP-UP
+
+    // INICIO - SALVAR TEXTO BIG POP-UP
+
+        function save2Content() {
+                var textarea = document.getElementById("bloconotas2");
+                var content = textarea.value;
+                localStorage.setItem("saved2Content", content);
+                console.log("Conteúdo salvo: " + content);
+            }
+
+            function restore2Content() {
+                var textarea = document.getElementById("bloconotas2");
+                if (localStorage.getItem("saved2Content")) {
+                        textarea.value = localStorage.getItem("saved2Content");
+                }
+            }
+
+            restore2Content();
+
+    // FIM - SALVAR TEXTO BIG POP-UP
+
+    // INICIO - BLOCO DE NOTAS
+
+        const openButton = document.getElementById('openNote');
+        const overlay = document.getElementById('overlay2');
+        const note = document.getElementById('note');
+
+        openButton.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        note.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Desativar a barra de rolagem
+        });
+
+        overlay.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        note.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restaurar a barra de rolagem
+        });
+
+    // FIM - BLOCO DE NOTAS
+
+    // INICIO - INTEGRAÇÃO CALLLOG
+
+        function insertProtocol() {
+            var protocolDiv = document.createElement("div");
+            protocolDiv.classList.add("protocol-form"); // Adiciona a classe "protocol-form" à <div>
+
+            protocolDiv.innerHTML = `
+                <label class="input-label">Protocolo:</label><br>
+                <input type="text" id="protocolInput" class="input-field" placeholder="Digite o Protocolo"><br><br>
+
+                <label class="input-label">Data:</label><br>
+                <input type="date" id="dateInput" class="input-field"><br><br>
+
+                <label class="input-label">Duração:</label><br>
+                <input type="time" step="2" id="durationInput" class="input-field" placeholder="00:00:00"><br><br>
+
+                <label class="input-label">Descrição:</label><br>
+                <input type="text" id="descriptionInput" class="input-field" placeholder="Qual o problema do cliente?"><br><br>
+
+                <button id="submitButton" class="submit-button">Inserir</button>`;
+
+                // Adiciona evento de clique no botão "Inserir"
+                var submitButton = protocolDiv.querySelector("#submitButton");
+                submitButton.addEventListener("click", function() {
+                    var protocolInput = protocolDiv.querySelector("#protocolInput");
+                    var dateInput = protocolDiv.querySelector("#dateInput");
+                    var durationInput = protocolDiv.querySelector("#durationInput");
+                    var descriptionInput = protocolDiv.querySelector("#descriptionInput");
+
+                    var protocol = protocolInput.value;
+                    var date = formatDate(dateInput.value); // Formata a data
+                    var duration = durationInput.value;
+                    var description = descriptionInput.value;
+
+                    if (protocol && date && duration) {
+                        var protocols = JSON.parse(localStorage.getItem("protocols")) || [];
+                        var newProtocol = {
+                            id: Date.now(),
+                            protocol: protocol,
+                            date: date,
+                            duration: duration,
+                            description: description,
+                        };
+
+                        protocols.push(newProtocol);
+                        localStorage.setItem("protocols", JSON.stringify(protocols));
+
+                        // Envie os dados para o mesmo local de armazenamento do site CallLog
+
+                        protocolDiv.remove(); // Remove a <div> do formulário após inserir o protocolo
+                        document.body.classList.remove("body-dark");
+                        darkOverlay.remove();
+                    }
+                });
+
+            // Adicione a div ao corpo do documento
+            document.body.appendChild(protocolDiv);
+
+            // Adiciona a classe "dark-overlay" ao body
+            document.body.classList.add("body-dark");
+
+            // Cria a camada de escuridão e adiciona a classe "dark-overlay" à <div>
+            var darkOverlay = document.createElement("div");
+            darkOverlay.classList.add("dark-overlay");
+            document.body.appendChild(darkOverlay);
+
+            document.addEventListener("click", function(event) {
+                var targetElement = event.target; // Elemento clicado
+                if (!protocolDiv.contains(targetElement) && targetElement !== insertButton) {
+                protocolDiv.remove(); // Remove a <div> do formulário
+                document.body.classList.remove("body-dark");
+                darkOverlay.remove();
+                }
+            });
+        }
+
+        // Função para formatar a data no formato "DIA/MÊS/ANO"
+        function formatDate(date) {
+            const [ano, mes, dia] = date.split('-');
+            return `${dia}/${mes}/${ano}`;
+        }
+
+        // Adiciona evento de clique no botão "Inserir"
+        var insertButton = document.querySelector(".fa-plus");
+        insertButton.addEventListener("click", insertProtocol);
+        
+
+    // FIM - INTEGRAÇÃO CALLLOG
+
+    </script>
+
+</body>
+</html>
