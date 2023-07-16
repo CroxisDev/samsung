@@ -1,4 +1,4 @@
-// INICIO - INFO DEVELOPER
+    // INICIO - INFO DEVELOPER
 
     // Função para exibir informações da página
     function showInfo() {
@@ -187,10 +187,8 @@
 
         // Função para inserir o protocolo na tabela
         function insertProtocol() {
-            var protocolDiv = document.createElement("div");
-            protocolDiv.classList.add("protocol-form"); // Adiciona a classe "protocol-form" à <div>
-
-            protocolDiv.innerHTML = `
+            Swal.fire({
+                html: `
                 <label class="input-label">Protocolo:</label><br>
                 <input type="text" id="protocolInput" class="input-field" placeholder="Digite o Protocolo"><br><br>
 
@@ -202,25 +200,35 @@
 
                 <label class="input-label">Descrição:</label><br>
                 <input type="text" id="descriptionInput" class="input-field" placeholder="Qual o problema do cliente?"><br><br>
+                `,
+                showCancelButton: true,
+                confirmButtonText: 'Adicionar',
+                cancelButtonText: 'Cancelar',
+                customClass: 'insert-protocol',
+                focusConfirm: false,
+                preConfirm: () => {
+                    const protocolInput = Swal.getPopup().querySelector('#protocolInput');
+                    const dateInput = Swal.getPopup().querySelector('#dateInput');
+                    const durationInput = Swal.getPopup().querySelector('#durationInput');
+                    const descriptionInput = Swal.getPopup().querySelector('#descriptionInput');
 
-                <button id="submitButton" class="submit-button">Inserir</button>`;
+                    const protocol = protocolInput.value;
+                    const date = formatDate(dateInput.value); // Formata a data
+                    const duration = durationInput.value;
+                    const description = descriptionInput.value;
 
-            // Adiciona evento de clique no botão "Inserir"
-            var submitButton = protocolDiv.querySelector("#submitButton");
-            submitButton.addEventListener("click", function() {
-                var protocolInput = protocolDiv.querySelector("#protocolInput");
-                var dateInput = protocolDiv.querySelector("#dateInput");
-                var durationInput = protocolDiv.querySelector("#durationInput");
-                var descriptionInput = protocolDiv.querySelector("#descriptionInput");
+                    if (!protocol || !date || !duration) {
+                        Swal.showValidationMessage('Preencha todos os campos obrigatórios.');
+                    }
 
-                var protocol = protocolInput.value;
-                var date = formatDate(dateInput.value); // Formata a data
-                var duration = durationInput.value;
-                var description = descriptionInput.value;
+                    return { protocol, date, duration, description };
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const { protocol, date, duration, description } = result.value;
 
-                if (protocol && date && duration) {
-                    var protocols = JSON.parse(localStorage.getItem("protocols")) || [];
-                    var newProtocol = {
+                    const protocols = JSON.parse(localStorage.getItem('protocols')) || [];
+                    const newProtocol = {
                         id: Date.now(),
                         protocol: protocol,
                         date: date,
@@ -229,32 +237,9 @@
                     };
 
                     protocols.push(newProtocol);
-                    localStorage.setItem("protocols", JSON.stringify(protocols));
+                    localStorage.setItem('protocols', JSON.stringify(protocols));
 
                     createTableRow(newProtocol);
-
-                    protocolDiv.remove(); // Remove a <div> do formulário após inserir o protocolo
-                    document.body.classList.remove("body-dark");
-                    darkOverlay.remove();
-                }
-            });
-
-            document.body.appendChild(protocolDiv);
-
-            // Adiciona a classe "dark-overlay" ao body
-            document.body.classList.add("body-dark");
-
-            // Cria a camada de escuridão e adiciona a classe "dark-overlay" à <div>
-            var darkOverlay = document.createElement("div");
-            darkOverlay.classList.add("dark-overlay");
-            document.body.appendChild(darkOverlay);
-
-            document.addEventListener("click", function(event) {
-                var targetElement = event.target; // Elemento clicado
-                if (!protocolDiv.contains(targetElement) && targetElement !== insertButton) {
-                    protocolDiv.remove(); // Remove a <div> do formulário
-                    document.body.classList.remove("body-dark");
-                    darkOverlay.remove();
                 }
             });
         }
