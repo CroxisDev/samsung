@@ -10,9 +10,9 @@
     <link rel="icon" href="https://th.bing.com/th/id/R.add4ba475470496b2ffe12b3bc5ed7e6?rik=h9DuQnzZDrXQIw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_167269.png&ehk=cCoOZiRJDfj3fYHzfqM28Ny3dOm1XR5ONY%2bi1l5GJTY%3d&risl=&pid=ImgRaw&r=0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
-    <script src="/mainScriptCallLog.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/mainScriptCallLog.js"></script>
 
 <style>
 
@@ -492,100 +492,5 @@
           &copy; 2023 CroxisDev. Todos os direitos reservados.
         </p>
     </footer>
-
-<script>
-// INICIO - FILTRO DA TABELA
-
-    $(document).ready(function() {
-        var protocols = JSON.parse(localStorage.getItem("protocols")) || [];
-        var today = new Date().toLocaleDateString('pt-BR');
-
-        // Função para filtrar com base no valor de pesquisa
-        function filterTable(searchValue) {
-            $("tbody tr").each(function() {
-                var protocolText = $(this).find("td:first-child").text().toLowerCase();
-                var dateText = $(this).find("td:nth-child(2)").text();
-
-                if (protocolText.includes(searchValue) || dateText.includes(searchValue)) {
-                    $(this).removeClass("hidden");
-                } else {
-                    $(this).addClass("hidden");
-                }
-            });
-
-            calculateAverageDuration(searchValue); // Recalcular o tempo médio de duração após aplicar o filtro
-        }
-
-        // Filtrar na data atual ao carregar a página
-        filterTable(today);
-
-        // Evento input do campo de pesquisa
-        $("#searchInput").on("input", function() {
-            var searchValue = $(this).val().toLowerCase();
-
-            if (searchValue === "") {
-                filterTable(today); // Restaurar o filtro da data de hoje
-            } else if (searchValue === "all") {
-                $("tbody tr").removeClass("hidden"); // Mostrar todos os produtos
-                sortTableByDate(); // Ordenar por data
-            } else {
-                filterTable(searchValue);
-            }
-        });
-
-        // Função para ordenar a tabela por data
-        function sortTableByDate() {
-            var rows = $("tbody tr").get();
-            rows.sort(function(a, b) {
-                var dateA = new Date($(a).find("td:nth-child(2)").text());
-                var dateB = new Date($(b).find("td:nth-child(2)").text());
-                return dateB - dateA;
-            });
-            $.each(rows, function(index, row) {
-                $("tbody").append(row);
-            });
-        }
-
-        // Função para calcular o tempo médio de duração dos protocolos
-        function calculateAverageDuration(date) {
-            var filteredProtocols = protocols.filter(function(protocol) {
-                return protocol.date === date && !$("tbody tr[data-date='" + date + "']").hasClass("hidden");
-            });
-
-            if (filteredProtocols.length > 0) {
-                var totalDuration = filteredProtocols.reduce(function(sum, protocol) {
-                    return sum + parseDuration(protocol.duration);
-                }, 0);
-
-                var averageDuration = totalDuration / filteredProtocols.length;
-                var averageDurationFormatted = formatDuration(averageDuration);
-                document.getElementById("averageDuration").innerText = averageDurationFormatted;
-            } else {
-                document.getElementById("averageDuration").innerText = "N/A";
-            }
-        }
-
-        // Função auxiliar para converter a duração no formato "HH:MM:SS" para um valor numérico em horas
-        function parseDuration(duration) {
-            var parts = duration.split(":");
-            var hours = parseInt(parts[0]);
-            var minutes = parseInt(parts[1]);
-            var seconds = parseInt(parts[2]);
-
-            return hours + (minutes / 60) + (seconds / 3600);
-        }
-
-        // Função auxiliar para formatar a duração em horas, minutos e segundos
-        function formatDuration(duration) {
-            var hours = Math.floor(duration);
-            var minutes = Math.floor((duration - hours) * 60);
-            var seconds = Math.floor(((duration - hours) * 60 - minutes) * 60);
-
-            return hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
-        }
-    });
-
-    // FIM - FILTRO DA TABELA
-</script>
 </body>
 </html>
