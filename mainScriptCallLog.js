@@ -1,4 +1,4 @@
-    // INICIO - INFO DEVELOPER
+// INICIO - INFO DEVELOPER
 
     // Função para exibir informações da página
     function showInfo() {
