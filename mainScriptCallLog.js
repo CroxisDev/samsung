@@ -1,33 +1,34 @@
     // INICIO - INFO DEVELOPER
 
+    // Função para exibir informações da página
     function showInfo() {
-            Swal.fire({
-                title: '<p class="dev-color2">Informação</p>',
-                html: '<p class="dev-color2">Last Version: 23.07.12.Dev</p><br> <p class="dev-color">Essa página não salva dados externamente!</p><br><p class="dev-color"><span class="developer-text" onclick="showExportDados()">Importação/Exportação de Dados</span></p><br> <p class="dev-color2">Dúvidas? Contate o <span class="developer-text" onclick="showDeveloperMessage()">Desenvolvedor!</span></p>',
-                icon: 'info',
-                customClass: 'dev-info'  
-            });
-        }
+        Swal.fire({
+            title: '<p class="dev-color2">Informação</p>',
+            html: '<p class="dev-color2">Last Version: 23.07.16.Dev</p><br> <p class="dev-color">Essa página não salva dados externamente!</p><br><p class="dev-color"><span class="developer-text" onclick="showExportDados()">Importação/Exportação de Dados</span></p><br> <p class="dev-color2">Dúvidas? Contate o <span class="developer-text" onclick="showDeveloperMessage()">Desenvolvedor!</span></p>',
+            icon: 'info',
+            customClass: 'dev-info'  
+        });
+    }
 
-        // Função para exibir a mensagem do desenvolvedor
-        function showDeveloperMessage() {
-            Swal.fire({
-                title: '<p class="dev-color2">Desenvolvedor</p>',
-                html: '<p class="dev-color2">Felipe Mendes - RE: 1460500</p> <span style="color: #FF9C99;">Entre em contato via Teams</span>',
-                confirmButtonText: 'Fechar',
-                customClass:'dev-info' 
-            })
-        }
+    // Função para exibir a mensagem do desenvolvedor
+    function showDeveloperMessage() {
+        Swal.fire({
+            title: '<p class="dev-color2">Desenvolvedor</p>',
+            html: '<p class="dev-color2">Felipe Mendes - RE: 1460500</p> <span style="color: #FF9C99;">Entre em contato via Teams</span>',
+            confirmButtonText: 'Fechar',
+            customClass:'dev-info' 
+        })
+    }
 
-        // Função para exibir a mensagem do desenvolvedor
-        function showExportDados() {
-            Swal.fire({
-                title: '<p class="dev-color2">CONFIGURAÇÕES</p>',
-                html: '<p style="color: #FF9C99;">Selecione uma opção abaixo!</p><br><p class="dev-color2"> <i onclick="extractData()" title="Exportar dados!" style="margin-right: 10px;" class="button-cursor fa-solid fa-cloud-arrow-up"></i> <i onclick="insertData()" title="Importar dados!" style="margin-right: 13px;" class="button-cursor fa-solid fa-cloud-arrow-down"></i><i onclick="clearData()" title="Deletar Dados" class="button-cursor fa-solid fa-trash"></i></p>',
-                confirmButtonText: 'Fechar',
-                customClass:'dev-info' 
-            })
-        }
+    // Função para exibir as configurações
+    function showExportDados() {
+        Swal.fire({
+            title: '<p class="dev-color2">CONFIGURAÇÕES</p>',
+            html: '<p style="color: #FF9C99;">Selecione uma opção abaixo!</p><br>   <i onclick="extractData()" title="Exportar dados!" style="margin-right: 10px;" class="dev-color2 button-cursor fa-solid fa-cloud-arrow-up"></i>     <i onclick="insertData()" title="Importar dados!" style="margin-right: 10px;" class="dev-color2 button-cursor fa-solid fa-cloud-arrow-down"></i>    <i onclick="clearData()" title="Deletar Dados" style="margin-right: 10px;" class="dev-color2 button-cursor fa-solid fa-trash"></i>',
+            confirmButtonText: 'Fechar',
+            customClass:'dev-info' 
+        })
+    }
 
     // FIM - INFO DEVELOPER
 
@@ -144,6 +145,7 @@
 
             var protocolCell = document.createElement("td");
             protocolCell.innerText = protocol.protocol;
+            protocolCell.classList.add("protocol-cursor");
 
             var dateCell = document.createElement("td");
             dateCell.innerText = protocol.date;
@@ -183,79 +185,79 @@
             tableBody.appendChild(newRow);
         }
 
-                // Função para inserir o protocolo na tabela
-            function insertProtocol() {
-                var protocolDiv = document.createElement("div");
-                protocolDiv.classList.add("protocol-form"); // Adiciona a classe "protocol-form" à <div>
+        // Função para inserir o protocolo na tabela
+        function insertProtocol() {
+            var protocolDiv = document.createElement("div");
+            protocolDiv.classList.add("protocol-form"); // Adiciona a classe "protocol-form" à <div>
 
-                protocolDiv.innerHTML = `
-                    <label class="input-label">Protocolo:</label><br>
-                    <input type="text" id="protocolInput" class="input-field" placeholder="Digite o Protocolo"><br><br>
+            protocolDiv.innerHTML = `
+                <label class="input-label">Protocolo:</label><br>
+                <input type="text" id="protocolInput" class="input-field" placeholder="Digite o Protocolo"><br><br>
 
-                    <label class="input-label">Data:</label><br>
-                    <input type="date" id="dateInput" class="input-field"><br><br>
+                <label class="input-label">Data:</label><br>
+                <input type="date" id="dateInput" class="input-field"><br><br>
 
-                    <label class="input-label">Duração:</label><br>
-                    <input type="time" step="2" id="durationInput" class="input-field" placeholder="00:00:00"><br><br>
+                <label class="input-label">Duração:</label><br>
+                <input type="time" step="2" id="durationInput" class="input-field" placeholder="00:00:00"><br><br>
 
-                    <label class="input-label">Descrição:</label><br>
-                    <input type="text" id="descriptionInput" class="input-field" placeholder="Qual o problema do cliente?"><br><br>
+                <label class="input-label">Descrição:</label><br>
+                <input type="text" id="descriptionInput" class="input-field" placeholder="Qual o problema do cliente?"><br><br>
 
-                    <button id="submitButton" class="submit-button">Inserir</button>`;
+                <button id="submitButton" class="submit-button">Inserir</button>`;
 
-                // Adiciona evento de clique no botão "Inserir"
-                var submitButton = protocolDiv.querySelector("#submitButton");
-                submitButton.addEventListener("click", function() {
-                    var protocolInput = protocolDiv.querySelector("#protocolInput");
-                    var dateInput = protocolDiv.querySelector("#dateInput");
-                    var durationInput = protocolDiv.querySelector("#durationInput");
-                    var descriptionInput = protocolDiv.querySelector("#descriptionInput");
+            // Adiciona evento de clique no botão "Inserir"
+            var submitButton = protocolDiv.querySelector("#submitButton");
+            submitButton.addEventListener("click", function() {
+                var protocolInput = protocolDiv.querySelector("#protocolInput");
+                var dateInput = protocolDiv.querySelector("#dateInput");
+                var durationInput = protocolDiv.querySelector("#durationInput");
+                var descriptionInput = protocolDiv.querySelector("#descriptionInput");
 
-                    var protocol = protocolInput.value;
-                    var date = formatDate(dateInput.value); // Formata a data
-                    var duration = durationInput.value;
-                    var description = descriptionInput.value;
+                var protocol = protocolInput.value;
+                var date = formatDate(dateInput.value); // Formata a data
+                var duration = durationInput.value;
+                var description = descriptionInput.value;
 
-                    if (protocol && date && duration) {
-                        var protocols = JSON.parse(localStorage.getItem("protocols")) || [];
-                        var newProtocol = {
-                            id: Date.now(),
-                            protocol: protocol,
-                            date: date,
-                            duration: duration,
-                            description: description,
-                        };
+                if (protocol && date && duration) {
+                    var protocols = JSON.parse(localStorage.getItem("protocols")) || [];
+                    var newProtocol = {
+                        id: Date.now(),
+                        protocol: protocol,
+                        date: date,
+                        duration: duration,
+                        description: description,
+                    };
 
-                        protocols.push(newProtocol);
-                        localStorage.setItem("protocols", JSON.stringify(protocols));
+                    protocols.push(newProtocol);
+                    localStorage.setItem("protocols", JSON.stringify(protocols));
 
-                        createTableRow(newProtocol);
+                    createTableRow(newProtocol);
 
-                        protocolDiv.remove(); // Remove a <div> do formulário após inserir o protocolo
-                        document.body.classList.remove("body-dark");
-                        darkOverlay.remove();
-                    }
-                });
+                    protocolDiv.remove(); // Remove a <div> do formulário após inserir o protocolo
+                    document.body.classList.remove("body-dark");
+                    darkOverlay.remove();
+                }
+            });
 
-                document.body.appendChild(protocolDiv);
+            document.body.appendChild(protocolDiv);
 
-                // Adiciona a classe "dark-overlay" ao body
-                document.body.classList.add("body-dark");
+            // Adiciona a classe "dark-overlay" ao body
+            document.body.classList.add("body-dark");
 
-                // Cria a camada de escuridão e adiciona a classe "dark-overlay" à <div>
-                var darkOverlay = document.createElement("div");
-                darkOverlay.classList.add("dark-overlay");
-                document.body.appendChild(darkOverlay);
+            // Cria a camada de escuridão e adiciona a classe "dark-overlay" à <div>
+            var darkOverlay = document.createElement("div");
+            darkOverlay.classList.add("dark-overlay");
+            document.body.appendChild(darkOverlay);
 
-                document.addEventListener("click", function(event) {
-                    var targetElement = event.target; // Elemento clicado
-                    if (!protocolDiv.contains(targetElement) && targetElement !== insertButton) {
-                        protocolDiv.remove(); // Remove a <div> do formulário
-                        document.body.classList.remove("body-dark");
-                        darkOverlay.remove();
-                    }
-                });
-            }
+            document.addEventListener("click", function(event) {
+                var targetElement = event.target; // Elemento clicado
+                if (!protocolDiv.contains(targetElement) && targetElement !== insertButton) {
+                    protocolDiv.remove(); // Remove a <div> do formulário
+                    document.body.classList.remove("body-dark");
+                    darkOverlay.remove();
+                }
+            });
+        }
 
         // Função para formatar a data no formato "DIA/MÊS/ANO"
         function formatDate(date) {
@@ -266,7 +268,6 @@
         // Adiciona evento de clique no botão "Inserir"
         var insertButton = document.querySelector(".fa-plus");
         insertButton.addEventListener("click", insertProtocol);
-
 
     });
     
@@ -312,6 +313,8 @@
 
     // FIM - MOSTRAR DESCRIÇÃO DO PROTOCOLO
 
+    // INICIO - CONFIGURAÇÕES - EXTRAÇÃO, IMPORTAÇÃO E EXCLUSÃO DE DADOS
+
     // Função para extrair os dados do LocalStorage
     function extractData() {
         var protocols = localStorage.getItem("protocols");
@@ -333,7 +336,7 @@
     }
 
     // Adicionar evento de clique ao botão de extração
-    var extractButton = document.getElementById("exportButton"); // Substitua "extractButton" pelo ID do seu botão
+    var extractButton = document.getElementById("exportButton");
     extractButton.addEventListener("click", extractData);
 
     // Função para inserir os dados no LocalStorage
@@ -398,7 +401,7 @@
     }
 
     // Adicionar evento de clique ao botão de inserção
-    var insertButton = document.getElementById('insertButton'); // Substitua "insertButton" pelo ID do seu botão
+    var insertButton = document.getElementById('insertButton');
     insertButton.addEventListener('click', insertData);
 
     // Função para limpar a chave "protocols" no LocalStorage
@@ -427,5 +430,7 @@
     }
 
     // Adicionar evento de clique ao botão de limpeza
-    var clearButton = document.getElementById('clearButton'); // Substitua "clearButton" pelo ID do seu botão
+    var clearButton = document.getElementById('clearButton');
     clearButton.addEventListener('click', clearData);
+
+    // FIM - CONFIGURAÇÕES - EXTRAÇÃO, IMPORTAÇÃO E EXCLUSÃO DE DADOS
