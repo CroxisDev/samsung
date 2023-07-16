@@ -1,4 +1,4 @@
-    /*INICIO - ESTILIZAÇÃO PÁGINA*/
+/*INICIO - ESTILIZAÇÃO PÁGINA*/
 
     body {
         padding-left: 20px;
@@ -86,6 +86,14 @@
         cursor: pointer;
     }
 
+    .protocol-cursor {
+        cursor: pointer;
+    }
+
+    .protocol-cursor:hover {
+        background-color: #714356;
+    }
+
     /*FIM - ADICIONAR CURSOR POINTER AO ICONE*/
 
     /*INICIO - ESTILO COLUNA DE OPÇÕES*/
@@ -106,7 +114,8 @@
     /*INICIO - ESTILO TABELA*/
 
     main {
-        background-color: #2C3845;
+        background-color: #5e3244;
+        color: white;
     }
 
     .th-insert{
@@ -310,6 +319,7 @@
     dt {
         font-size: 2.2rem;
         font-weight: 300;
+        color: white;
     }
 
     dd {
@@ -318,6 +328,7 @@
         padding-bottom: 5px;
         border-bottom: 1px solid #ac2647;
         box-shadow: 0 1px 0 #c52c51;
+        color: white;
     }
 
     .close {
