@@ -1,9 +1,9 @@
-/*INICIO - ESTILIZAÇÃO PÁGINA*/
+    /*INICIO - ESTILIZAÇÃO PÁGINA*/
 
     body {
         padding-left: 20px;
         padding-right: 20px;
-        background-color: #5BB9B8;
+        background-color: #00ffff;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         color: #fff;
@@ -28,6 +28,8 @@
     h1 {
         text-align: center;
         font-weight: 300;
+        color: #414a55;
+        font-family: 'Amarante', Tahoma, sans-serif;
     }
 
     ::-webkit-scrollbar {
@@ -76,6 +78,7 @@
 
     footer p {
         width: 55%;
+        color: #414a55;
     }
 
     /*FIM - ESTILO DEV-INFO*/
