@@ -1,0 +1,453 @@
+/*Importação de Fonte "INTER"*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+/* Redefinindo estilo padrão do navegador */
+
+* {
+    font-family: 'inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Corpo da Página */
+
+html {
+    scroll-behavior: smooth;
+}  
+
+body {
+    background-image: url('https://th.bing.com/th/id/R.e9584da4e3f9a214d799a4754b3951db?rik=fIVqkoeUcVOPag&pid=ImgRaw&r=0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* INICIO - Estilização do Menu */
+
+.menu {
+    display: flex;
+    position: fixed;
+    background-color: #262626;
+    color: #fff;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+    height: 8vh;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+    transition: top 0.3s ease; /* Adiciona um efeito de transição suave */
+
+}
+
+.menu.hidden {
+    top: -8vh; /* Coloca o menu acima da tela, ocultando-o */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 a {
+    color: #fff;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+    transition: font-size 0.2s, transform 0.3s; /* Adiciona um efeito de transição suave */
+    display: inline-block;
+}
+
+.nav-link:hover {
+    transform: scale(1.35);
+}
+
+@media screen and (max-width: 730px) {
+
+    .nav-list {
+        display: none;
+    }
+    
+}
+
+/* FIM - Estilização do Menu */
+
+/* INICIO - Estilização da estrutura principal da página */
+
+.section_principal {
+    display: flex;
+    justify-content: center;
+    columns: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main {
+    height: 100vh;
+    flex: 1;
+}
+
+main input {
+    background-color: transparent;
+    color: rgb(126, 125, 125);
+    padding: 0.8%;
+    margin-top: 0.5%;
+    border: none;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    border-radius: 3px;
+    resize: none; /* Remove a opção de redimensionamento */
+}
+
+main input:focus {
+    outline: none;
+}
+
+main textarea {
+    background-color: transparent;
+    color: #666;
+    height: 110px;
+    width: 90%;
+    padding: 5px;
+    margin-top: 8px;
+    margin-left: 30px;
+    border: 1px solid rgb(71, 71, 71);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    resize: none; /* Remove a opção de redimensionamento */
+    transition: font-size 0.2s, transform 0.3s; /* Adiciona um efeito de transição suave */
+    display: inline-block;
+}
+
+main textarea:focus {
+    outline: none;
+}
+
+main textarea:hover {
+    transform: scale(1.01);
+}
+
+main select {
+    border-radius: 5px;
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid rgb(71, 71, 71); /* Adicione a borda inferior personalizada */
+    text-align: left;
+    background-color: transparent;
+    color: rgb(126, 125, 125);
+    margin-bottom: 0.1%;
+    margin-top: 1%;
+    cursor: pointer;
+}
+
+main select:focus {
+    outline: none;
+}
+
+.icon-importante {
+    background-color: #fff;
+    color: #ff004d;
+    font-size: 16px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/*INICIO - Estilo botão de copiar */
+
+.copy-button {
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid #000001;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+    transition: font-size 0.2s, transform 0.3s; /* Adiciona um efeito de transição suave */
+}
+
+.copy-button:focus {
+    outline: none;
+}
+
+.copy-button:hover {
+    background-color: #000000;
+    color: white;
+    transform: scale(1.1);
+}
+
+.copy-button:active {
+    transform: scale(1.3);
+}
+
+/*FIM - Estilo botão copiar*/
+
+/*INICIO - Botão Visual Suporte*/
+
+.toggle-button {
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    width: 175px;
+    font-size: 12px;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid #000102;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    transition: background-color 0.3s, color 0.1s;
+    transition: font-size 0.2s, transform 0.5s; /* Adiciona um efeito de transição suave */
+    display: inline-block; /* Alinha lado a lado */
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.toggle-button:hover {
+    background-color: #000000;
+    color: white;
+    transform: scale(1.1);
+}
+
+.toggle-button:active {
+    transform: scale(1.2);
+}
+
+.toggle-menu i {
+    font-size: 24px;
+}
+
+.content {
+    margin-top: 20px;
+    padding: 20px;
+    display: none; /* Inicia oculto */
+}
+
+/*FIM - Botão Visual Suporte*/
+
+/*Estilização da Sessão Dados do Consumidor*/
+
+.section_profile {
+    background-color: #FFFFFF;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 55vw;
+    padding-top: 10vh;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.section_profile h2 {
+    color: #333;
+    margin: 1%;
+}
+
+.profile_bottom {
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.profile_bottom label,
+.profile_bottom input {
+  display: block;
+  margin-top: 8px;
+}
+
+.profile_side-by-side {
+    display: inline-block;
+}
+
+.section_notes {
+    background-color: #FFFFFF;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 45vw;
+    padding-top: 10vh;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.section_notes h2 {
+    color: #333;
+    margin: 1%;
+}
+
+.section_notes p {
+    margin-top: 10px;
+    margin-left: 15px;
+    color: rgb(126, 125, 125);
+}
+
+.section_bloco {
+    display: none;
+    background-color: #FFFFFF;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 45vw;
+    padding-top: 10vh;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.section_bloco h2 {
+    color: #333;
+    margin: 1%;
+}
+
+.section_bloco textarea {
+    background-color: transparent;
+    width: 30vw;
+
+}
+  
+/*Estilização da Sessão Inquérito*/
+
+.section_inquerito {
+    background-color: #FFFFFF;
+    color: rgb(0, 0, 0);
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    min-height: 110vh;
+    padding: 1%;
+}
+
+.section_inquerito h2 {
+    color: #666;
+    margin: 1%;
+}
+
+.section_inquerito label, select, button {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+/*Estilização da Sessão Resolução*/
+
+.section_resolution {
+    background-color: #FFFFFF;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.5);
+    color: rgb(0, 0, 0);
+    width: 50vw;
+    min-height: 110vh;
+    padding: 1%;
+}
+
+.section_resolution h2 {
+    color: #666;
+    margin: 1%;
+}
+
+.section_resolution h3 {
+    color: #000000;
+    margin: 1%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.section_resolution label, select, button {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.section_resolution .input-modelo {
+    background-color: rgba(241, 241, 241, 0);
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 2%;
+    height: flex;
+    width: auto;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/*Estilização da Sessão Service Request*/
+
+.section_service {
+    background-color: #FFFFFF;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.5);
+    color: rgb(0, 0, 0);
+    min-height: 90vh;
+    padding: 1%;
+}
+
+.section_service h2 {
+    color: #666;
+    margin: 1%;
+}
+
+.section_service h4 {
+    color: #080000;
+    margin: 1%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.section_service h5 {
+    color: #000000;
+    margin: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.section_service label, select, p {
+    margin-left: 30px;
+}
+
+.input-service {
+    margin-left: 30px;
+}
+
+/*Estilização Footer*/
+
+.footer_copyright {
+    display: flex;
+    justify-content: center;
+    background-color: #353536;
+    color: aqua;
+    font-weight: 300;
+    font-size: 2vh;
+    padding: 1%;
+}
+
+/* FIM - Estilização da estrutura principal da página */
