@@ -101,7 +101,7 @@ function copyLavaSeca() {
     }
 
     if (lavagemteste !== '') {
-        copiedText += `\n       • LAVAGEM TESTE: ${lavagemteste}`;
+        copiedText += `\n           • LAVAGEM TESTE: ${lavagemteste}`;
     }
 
     if (tamboreco !== '') {
