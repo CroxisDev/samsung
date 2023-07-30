@@ -92,14 +92,6 @@ body {
     transform: scale(1.35);
 }
 
-@media screen and (max-width: 730px) {
-
-    .nav-list {
-        display: none;
-    }
-    
-}
-
 /* FIM - Estilização do Menu */
 
 /* INICIO - Estilização da estrutura principal da página */
@@ -443,6 +435,29 @@ main select:focus {
     font-weight: 300;
     font-size: 2vh;
     padding: 1%;
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 1312px) {
+
+    .section_resolution .toggle-button {
+        width: 167px;
+        font-size: 10px;
+    }
+
+    .section_profile input {
+        width: 170px;
+    }
+    
+}
+
+@media screen and (max-width: 730px) {
+
+    .nav-list {
+        display: none;
+    }
+    
 }
 
 /* FIM - Estilização da estrutura principal da página */
