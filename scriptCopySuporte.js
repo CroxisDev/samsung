@@ -342,6 +342,8 @@ function copyOrdemServico() {
     dataCompra = `${dia}/${mes}/${ano}`;
     }
 
+    let copiedText = `ABERTURA DE ORDEM DE SERVIÇO\n\n        ✍| DADOS DO PRODUTO\n`;
+
     if (modelo !== '') {
     copiedText += `\n           • MODELO: ${modelo}`;
     }
@@ -361,8 +363,6 @@ function copyOrdemServico() {
     if (emGarantia !== '') {
     copiedText += `\n           • GARANTIA: ${emGarantia}`;
     }
-
-    let copiedText = ``;
 
     copiedText += `\n
             CLIENTE CIENTE QUE:
