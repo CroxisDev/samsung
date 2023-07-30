@@ -362,7 +362,9 @@ function copyOrdemServico() {
     copiedText += `\n           • GARANTIA: ${emGarantia}`;
     }
 
-    if copiedText += `\n
+    let copiedText = ``;
+
+    copiedText += `\n
             CLIENTE CIENTE QUE:
                 FORA DOS PADRÕES DE INSTALAÇÃO VISITA SERÁ COBRADA;
                 EM CASO DE INEXISTÊNCIA DE DEFEITO VISITA SERÁ COBRADA;
