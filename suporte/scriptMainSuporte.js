@@ -75,3 +75,26 @@ textareas.forEach(function(textarea) {
     restoreContent();
 
 // FIM - SALVAR TEXTO DO ANOTAÇÃO
+
+// INICIO - Notificação
+
+// Adicionar evento de clique a todos os botões com a classe "copy-button"
+const copyButtons = document.querySelectorAll('.copy-button');
+copyButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    exibirNotificacaoDeSucesso();
+  });
+});
+
+function exibirNotificacaoDeSucesso() {
+  iziToast.success({
+    message: 'Texto copiado',
+    position: 'bottomRight',
+    timeout: 5000, // Tempo em milissegundos que a notificação será exibida (5 segundos neste exemplo)
+    closeOnClick: true, // Fechar a notificação ao clicar nela
+    pauseOnHover: true, // Pausar o tempo limite da notificação quando o mouse estiver sobre ela
+    progressBar: true, // Mostrar uma barra de progresso
+  });
+}
+
+// FIM - Notificação
