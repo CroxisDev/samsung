@@ -1,2 +1,7 @@
 RewriteEngine On
 RewriteRule ^([0-9A-Za-z-_]+)$ /$1.html
+
+AuthType Basic
+AuthName "Área Restrita"
+AuthUserFile .htpasswd
+Require valid-user
