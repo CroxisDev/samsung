@@ -14,16 +14,14 @@ function copyToClipboard(text) {
 function copyinquerito() {
     const consumidorInfo = document.getElementById('consumidor-resposta').value;
     const csView = document.getElementById('cs-view-resposta').value;
-    const sa = document.getElementById('sa-resposta').value;
     const marketing = document.getElementById('marketing-resposta').value;
     const retornoLigacao = document.getElementById('retorno-ligacao-resposta').value;
     const protocoloSms = document.getElementById('protocolo-sms-resposta').value;
 
     let copiedText = `${consumidorInfo}\n
         CS VIEW: ${csView}
-        S.A: ${sa}
         MARKETING: ${marketing}
-        PERMITIDO RETORNO DE LIGAÇÃO: ${retornoLigacao}
+        RETORNO DE LIGAÇÃO: ${retornoLigacao}
         PERMITIDO PROTOCOLO POR SMS: ${protocoloSms}`;
 
     copyToClipboard(copiedText);
@@ -85,7 +83,7 @@ function copyLavaSeca() {
     }
 
     if (modelolava !== '') {
-    copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE:${modelolava}`;
+    copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE: ${modelolava}`;
     }
 
     if (filtrodetrito !== '') {
