@@ -22,7 +22,7 @@ function copyinquerito() {
         CS VIEW: ${csView}
         MARKETING: ${marketing}
         RETORNO DE LIGAÇÃO: ${retornoLigacao}
-        PERMITIDO PROTOCOLO POR SMS: ${protocoloSms}`;
+        PROTOCOLO POR SMS: ${protocoloSms}`;
 
     copyToClipboard(copiedText);
 }
