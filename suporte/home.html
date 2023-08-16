@@ -172,6 +172,7 @@
                 <h3>Visual Suporte</h3>
     
                 <button class="toggle-button" onclick="toggleContent('lavadoraoculta')"><i class="fas fa-eye"></i> Lavadora</button>
+                <button class="toggle-button" onclick="toggleContent('secadoraoculta')"><i class="fas fa-eye"></i> Secadora</button>
                 <button class="toggle-button" onclick="toggleContent('refrigeradoroculta')"><i class="fas fa-eye"></i> Refrigerador</button>
                 <button class="toggle-button" onclick="toggleContent('acnoculta')"><i class="fas fa-eye"></i> Ar-Condicionado</button>
                 <button class="toggle-button" onclick="toggleContent('powerbotoculta')"><i class="fas fa-eye"></i> PowerBot</button>
@@ -181,7 +182,7 @@
     
                 <div class="content" id="lavadoraoculta">
     
-                    <h4>ETAPA - LAVADORA/SECADORA</h4>
+                    <h4>ETAPA - LAVADORA / LAVA E SECA</h4>
 
                         <div class="input-modelo">
                             <label>Modelos Comercializados no Brasil:</label><br><br>
@@ -279,6 +280,89 @@
                 </div>
     
                 <!-- FIM - LAVA E SECA -->
+
+                <!-- INICIO - SECADORA -->
+
+                <div class="content" id="secadoraoculta">
+
+                    <h4>ETAPA - SECADORA</h4>
+
+                        <div class="input-modelo">
+                            <label>Modelos Comercializados no Brasil:</label><br><br>
+                            <span>AZ (Tensão 127V)</span><br><br>
+                            <span>FAZ (Tensão 220V)</span>
+                        </div>
+    
+                        <label>Voltagem da Tomada:</label><br>
+                        <select id="secadora-tomada-voltagem-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="220v">220v</option>
+                            <option value="127v">127v</option>
+                            <option value="110v">110v</option>
+                            <option value="CLIENTE NÃO SABE">N/A</option>
+                        </select><br><br>
+    
+                        <label>Uso de Adaptador/Extensão:</label><br>
+                            <select id="secadora-adaptador-extensao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select><br><br>
+    
+                        <label>Sistema de Exaustão:</label><br>
+                            <select id="secadora-exaustao-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="NÃO FOI REMOVIDO">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Tubulação de Gás:</label><br>
+                            <select id="secadora-gas-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Nivelamento:</label><br>
+                            <select id="secadora-nivelamento-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="IRREGULAR">IRREGULAR</option>
+                            </select><br><br>
+    
+                        <label>Etiqueta contendo o Modelo e/ou N° de Série:</label><br>
+                            <select id="secadora-etiqueta-modelo-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="RASURADA/ACOPLADA">RASURADA/ACOPLADA</option>
+                            </select><br><br>
+    
+                        <label>Teste de Obstrução do Respiro:</label><br>
+                            <select id="secadora-respiro-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="APRESENTOU CÓDIGO DE VERIFICAÇÃO">CÓDIGO DE VERIFICAÇÃO</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+    
+                        <label>Limpeza do Filtro de Fibras:</label><br>
+                            <select id="secadora-filtro-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+    
+                        <label>Secagem Teste:</label><br>
+                            <select id="secadora-secagem-teste-resposta">
+                                <option value="">-- Selecione uma opção --</option>
+                                <option value="OK">OK</option>
+                                <option value="PENDENTE">PENDENTE</option>
+                            </select><br><br>
+    
+                    <button class="copy-button" onclick="copySecadora('Secadora')"><i class="fas fa-copy"></i></button><br><br>
+                </div>
+    
+                <!-- FIM - SECADORA -->
     
                 <!-- INICIO - REFRIGERADOR -->
     
@@ -453,7 +537,8 @@
                         <div class="input-modelo">
                             <label>Modelos Comercializados no Brasil:</label><br><br>
                             <span>AZ (Tensão 127V)</span><br><br>
-                            <span>BZ (Tensão 220V)</span>
+                            <span>BZ (Tensão 220V)</span><br><br>
+                            <span>Obs: Em alguns modelos de "PowerBot/JetBot" as estações de carregamento são bi-volt.</span>
                         </div>
 
                         <label>Voltagem da Tomada:</label><br>
