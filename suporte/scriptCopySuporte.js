@@ -58,7 +58,7 @@ function copyLavaSeca() {
     const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
 
     let copiedText = `${resolutionConsu}\n
-    ➤ | LAVADORA/SECADORA`;
+    ➤ | LAVADORA / LAVA E SECA`;
 
     if (voltagemTomada !== '') {
     copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
