@@ -112,6 +112,63 @@ function copyLavaSeca() {
 
 }
 
+// COPIAR SECADORA
+
+function copySecadora() {
+    const voltagemTomada = document.getElementById('secadora-tomada-voltagem-resposta').value;
+    const usoAdaptador = document.getElementById('secadora-adaptador-extensao-resposta').value;
+    const exaustor = document.getElementById('secadora-exaustao-resposta').value;
+    const gas = document.getElementById('secadora-gas-resposta').value;
+    const nivelapiso = document.getElementById('secadora-nivelamento-resposta').value;
+    const modeloseca = document.getElementById('secadora-etiqueta-modelo-resposta').value;
+    const respiroseca = document.getElementById('secadora-respiro-resposta').value;
+    const filtroseca = document.getElementById('secadora-filtro-resposta').value;
+    const secagemteste = document.getElementById('secadora-secagem-teste-resposta').value;
+    const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+    let copiedText = `${resolutionConsu}\n
+    ➤ | SECADORA`;
+
+    if (voltagemTomada !== '') {
+    copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
+    }
+
+    if (usoAdaptador !== '') {
+    copiedText += `\n           • USO DE ADAPTADOR/EXTENSÃO: ${usoAdaptador}`;
+    }
+
+    if (exaustor !== '') {
+    copiedText += `\n           • SISTEMA DE EXAUSTÃO: ${exaustor}`;
+    }
+
+    if (gas !== '') {
+    copiedText += `\n           • TUBULAÇÃO DE GÁS: ${gas}`;
+    }
+
+    if (nivelapiso !== '') {
+    copiedText += `\n           • NIVELAMENTO: ${nivelapiso}`;
+    }
+
+    if (modeloseca !== '') {
+    copiedText += `\n           • ETIQUETA CONTENDO O MODELO E/OU N° DE SÉRIE: ${modeloseca}`;
+    }
+
+    if (respiroseca !== '') {
+    copiedText += `\n           • TESTE DE OBSTRUÇÃO DO RESPIRO: ${respiroseca}`;
+    }
+
+    if (filtroseca !== '') {
+    copiedText += `\n           • LIMPEZA DO FILTRO DE FIBRAS: ${filtroseca}`;
+    }
+
+    if (secagemteste !== '') {
+    copiedText += `\n           • SECAGEM TESTE: ${secagemteste}`;
+    }
+
+    copyToClipboard(copiedText);
+
+}
+
 // COPIAR REFRIGERADOR
 
 function copyRefrigerador() {
