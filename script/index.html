@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <title>Script's | CroxisDev</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt-BR">
+    <meta name="author" content="Felipe Mendes - RE: 1460500">
+    <meta name="description" content="Script's - Sprinklr">
+    <meta name="copyright" content="© 2023 CroxisDev">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" href="https://croxisdev.com.br/croxisdev.png">
+    <link rel="stylesheet" href="styleMainRoteiro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+
+            <div class="logo">
+                <h1><a href="https://www.croxisdev.com.br" target="_blank">CroxisDev</a></h1>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br" class="nav-link">Home</a></li>
+
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br/suporte/" class="nav-link" target="_blank">Suporte</a></li>
+
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br/form" class="nav-link" target="_blank">Formulário</a></li>
+
+                </ul>
+                
+            </div>
+
+        </nav>
+
+    </header>
+    
+    <main>
+
+        <div class="script-box">
+
+            <div class="flex-box">
+                <div class="script">
+                    <p>Olá [Nome do Cliente],<br><br>
+
+                    Eu sou [Seu Nome], Analista da Samsung. Para que possamos dar continuidade à sua solicitação de serviço, precisamos realizar alguns procedimentos.<br><br>
+
+                    Você está disponível no momento e próximo ao seu produto?</p>
+                </div>
+
+                <button id="notification" class="copy-button" onclick="copiarTexto(0)"><i class="fas fa-copy"></i></button>
+            </div>
+
+            <div class="flex-box">
+                <div class="script">
+                    <p>[Nome do Cliente],<br><br>
+
+                        Agradecemos por fornecer as informações necessárias. Sua ordem de serviço foi registrada com o protocolo xxxxxxxxxx. Em até 24 horas, a assistência técnica entrará em contato para realizar a confirmação da visita.<br><br>
+                        
+                        Tenha um ótimo dia!<br><br>
+                        
+                        Atenciosamente,<br>
+                        [Seu Nome]<br>
+                        Analista da Samsung</p>
+                </div>
+
+                <button class="copy-button" onclick="copiarTexto(1)"><i class="fas fa-copy"></i></button>
+            </div>
+
+            <div class="flex-box">
+                <div class="script">
+                    <p>Prezado(a) [Nome do Cliente],<br><br>
+
+                        Para podermos avançar com a sua solicitação de serviço, precisamos de algumas informações sobre seu produto. Por favor, envie as seguintes informações:<br><br>
+                        
+                        Encaminhe anexos referentes à instalação do seu produto, conforme as solicitações abaixo:<br><br>
+
+                        - [Foto]: Local do Produto Instalado<br>
+                        - [Foto]: Etiqueta do Produto contendo Modelo e N° de série<br>
+                        - [Foto]: Tomada (127v ou 220v?)<br>
+                        - [Foto]: [Explicação do que você precisa]<br><br>
+
+                        Ou, se preferir, encaminhe um único vídeo de no máximo 2 minutos contendo todas as informações solicitadas anteriormente.<br><br>
+                        
+                        Agradecemos desde já pela sua colaboração.</p>
+                </div>
+
+                <button class="copy-button" onclick="copiarTexto(2)"><i class="fas fa-copy"></i></button>
+            </div>
+
+            <div class="flex-box">
+                <div class="script">
+                    <p>Agradecemos por nos fornecer informações sobre a instalação do seu produto. Agora, para garantir um melhor suporte, gostaríamos que realizasse alguns testes no seu dispositivo. Isso nos ajudará a entender melhor o problema e oferecer a assistência necessária.<br><br>
+
+                        Por favor, siga os passos abaixo e nos forneça os resultados ou possíveis mensagens de erro que encontrar:<br><br>
+                        
+                        Teste 1: [Descreva o primeiro teste que deseja que o cliente faça]<br>
+                        Teste 2: [Descreva o segundo teste que deseja que o cliente faça]<br>
+                        Teste 3: [Descreva o terceiro teste que deseja que o cliente faça]<br><br>
+                        
+                        Tire fotos ou grave vídeos dos testes para nos auxiliar ainda mais na análise.<br><br>
+                        
+                        Agradecemos novamente pela sua colaboração e aguardamos a realização dos testes para prosseguirmos com a Ordem de Serviço.</p>
+                </div>
+
+                <button class="copy-button" onclick="copiarTexto(3)"><i class="fas fa-copy"></i></button>
+            </div>
+
+        </div>
+
+        <div class="footer_copyright">
+            &copy; 2023 CroxisDev. Todos os direitos reservados.
+        </div>
+
+    </main>
+
+    <script src="scriptMainRoteiro.js"></script>
+
+</body>
+</html>
