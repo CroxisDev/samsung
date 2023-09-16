@@ -169,11 +169,9 @@ html {
 /*Estilização Footer*/
 
 .footer_copyright {
-    position: flex;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute;
+    bottom: 0;
     font-size: 14px;
     color: #888;
-    z-index: 999;
+    margin: 0 0 10px 35%;
 }
