@@ -20,6 +20,29 @@
 
 <body>
 
+    <header>
+        <nav class="menu">
+
+            <div class="logo">
+                <h1><a href="https://www.croxisdev.com.br" target="_blank">CroxisDev</a></h1>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br" class="nav-link">Home</a></li>
+
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br/suporte/" class="nav-link" target="_blank">Suporte</a></li>
+
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br/script" class="nav-link" target="_blank">Script's</a></li>
+
+                </ul>
+                
+            </div>
+
+        </nav>
+
+    </header>
+
     <main>
         <section class="structure-form">
 
@@ -36,16 +59,13 @@
                     <label for="dtree">Analista seguiu a D-Tree/Flex?</label>
                     <input type="text" id="check_dtree" name="check_dtree" placeholder="Ex: Não, analista não realizou os testes como indicado na D-Tree/Flex!" autocomplete="off"><br><br>
 
-                    <label for="dtree">Dentro ou Fora de Garantia? Possível caso de exclusão de garantia?</label>
-                    <input type="text" id="check_garantia" name="check_garantia" placeholder="Ex: Dentro da Garantia, porém, possível caso de exclusão" autocomplete="off"><br><br>
-
                     <label for="error_cod">Apresentou código de erro? O erro informado existe?</label>
                     <input type="text" id="check_error_cod" name="check_error_cod" placeholder="Ex: Erro 5C" autocomplete="off"><br><br>
 
                     <label for="visual_suporte">Foi utilizado Visual Suporte?</label>
                     <input type="text" id="check_visual_suporte" name="check_visual_suporte" placeholder="Ex: Sim!" autocomplete="off"><br><br>
 
-                    <label for="proactive">Analista utilizou Proactive? E está de acordo com o sintoma?</label>
+                    <label for="proactive">Analista utilizou Proactive?</label>
                     <input type="text" id="check_proactive" name="check_proactive" placeholder="Ex: Seguiu como sem sintoma na ferramenta!" autocomplete="off"><br><br>
 
                     <label for="anexos">Anexou evidências do ocorrido?</label>
@@ -57,7 +77,7 @@
                     <label for="modelo">Foi inserido Modelo / N° Série? O número de série está correto?</label>
                     <input type="text" id="check_modelo" name="check_modelo" placeholder="Ex: Sim, porém, o n° de série está incorreto, erro de digíto!" autocomplete="off"><br><br>
 
-                    <label for="observacao">Observação/Reforço de informações inseridas por você no G-CIC?</label>
+                    <label for="observacao">Observação:</label>
                     <input type="text" id="check_observacao" name="check_observacao" placeholder="Ex: Corrigido Endereço do Consumidor com base no contato via InfoBIP!" autocomplete="off"><br><br>
 
                     <input type="submit" value="Transferência">
