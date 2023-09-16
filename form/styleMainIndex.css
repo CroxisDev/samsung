@@ -42,6 +42,67 @@ html {
     scroll-behavior: smooth;
 }
 
+/* INICIO - Estilização do Menu */
+
+.menu {
+    display: flex;
+    position: fixed;
+    background-color: rgba(38, 38, 38, 0.5); /* Cor de fundo com 50% de opacidade */
+    color: #fff;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+    height: 8vh;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+    transition: top 0.3s ease; /* Adiciona um efeito de transição suave */
+
+}
+
+.menu.hidden {
+    top: -8vh; /* Coloca o menu acima da tela, ocultando-o */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 a {
+    color: #fff;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+    transition: font-size 0.2s, transform 0.3s; /* Adiciona um efeito de transição suave */
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    transform: scale(1.10);
+}
+
+/* FIM - Estilização do Menu */
+
 /*Estilizando formulário*/
 
 .structure-form {
