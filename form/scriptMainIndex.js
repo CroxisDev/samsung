@@ -4,6 +4,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
     // Recolha as respostas do formulário
     const requisitos = document.getElementById("check_requisitos").value;
     const dtree = document.getElementById("check_dtree").value;
+    const garantia = document.getElementById("check_garantia").value;
     const error_cod = document.getElementById("check_error_cod").value;
     const visual_suporte = document.getElementById("check_visual_suporte").value;
     const proactive = document.getElementById("check_proactive").value;
@@ -14,7 +15,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 
     // Crie um elemento de texto oculto para copiar apenas as respostas
     const textArea = document.createElement("textarea");
-    textArea.value = `${requisitos}\t${dtree}\t${error_cod}\t${visual_suporte}\t${proactive}\t${anexos}\t${instalacao}\t${modelo}\t${observacao}`;
+    textArea.value = `${requisitos}\t${dtree}\t${garantia}\t${error_cod}\t${visual_suporte}\t${proactive}\t${anexos}\t${instalacao}\t${modelo}\t${observacao}`;
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
