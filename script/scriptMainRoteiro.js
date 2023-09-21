@@ -42,7 +42,7 @@ function copiarTexto(index) {
 // FIM - FUNÇÃO COPIAR TEXTO
 
 // Adicionar evento de clique a todos os botões com a classe "copy-button"
-const copyButtons = document.querySelectorAll('.copy-button');
+const copyButtons = document.querySelectorAll('.script');
 copyButtons.forEach(button => {
   button.addEventListener('click', () => {
     exibirNotificacaoDeSucesso();
