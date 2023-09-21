@@ -31,11 +31,17 @@
 
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="https://www.croxisdev.com.br" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br" class="nav-link"><i class="fa-solid fa-house"></i></a></li>
 
-                    <li class="nav-item"><a href="https://www.croxisdev.com.br/suporte/" class="nav-link" target="_blank">Suporte</a></li>
+                    <li class="nav-item"><a href="https://www.croxisdev.com.br/form" class="nav-link" target="_blank" title="Formulário"><i class="fa-brands fa-wpforms"></i></a></li>
 
-                    <li class="nav-item"><a href="https://www.croxisdev.com.br/form" class="nav-link" target="_blank">Formulário</a></li>
+                    <li class="nav-item"><a href="https://www.samsung.com/br/" class="nav-link" target="_blank"><img height="22px" width="22px" src="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/Favicon.png"></a></li>
+
+                    <li class="nav-item"><a href="http://bloo.sdslacc.local/" class="nav-link" target="_blank"><img height="22px" width="22px" src="https://croxisdev.com.br/suporte/img/bloo_ico.png"></a></li>
+
+                    <li class="nav-item"><a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" class="nav-link" target="_blank"><img style="border-radius: 7px;" height="22px" width="22px" src="https://www.uninassau.edu.br/sites/mauriciodenassau.edu.br/files/fields/imagemLateral/noticias/2018/03/imposto-de-renda-2018.png"></a></li>
+
+                    <li class="nav-item"><a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" class="nav-link" target="_blank"><img height="22px" width="22px" src="https://buscacepinter.correios.com.br/core/templates/bunker/img/favi-ect.png"></a></li>
 
                 </ul>
                 
@@ -47,98 +53,110 @@
     
     <main>
 
-        <div class="script-box">
+            <div class="sprinklr-box">
 
-            <div class="flex-box">
-                <div class="script">
-                    <p>Olá [Nome do Cliente],<br><br>
+                <h2>Script - Sprinklr</h2>
 
-                    Eu sou [Seu Nome], Analista da Samsung. Para que possamos dar continuidade à sua solicitação de serviço, precisamos realizar alguns procedimentos.<br><br>
+                <div class="flex-box">
+                    <div class="script" onclick="copiarTexto(0)">
+                        <p>Olá [Nome do Cliente],<br><br>
 
-                    Você está disponível no momento e próximo ao seu produto?</p>
+                        Eu sou [Seu Nome], Analista da Samsung. Para podermos dar continuidade à sua solicitação de serviço, precisamos realizar alguns procedimentos.<br><br>
+
+                        Você está disponível no momento e próximo ao seu produto?</p>
+                    </div>
                 </div>
 
-                <button id="notification" class="copy-button" onclick="copiarTexto(0)"><i class="fas fa-copy"></i></button>
-            </div>
-
-            <div class="flex-box">
-                <div class="script">
-                    <p>Agradecemos por fornecer as informações necessárias. Sua ordem de serviço foi registrada com o protocolo xxxxxxxxxx. Em até 24 horas, a assistência técnica entrará em contato para realizar a confirmação da visita.<br><br>
-                        
-                        Para casos de produtos em período de garantia com possível evento fora de garantia (exemplos: instalação indevida, uso em desacordo ou danos físicos) poderá ser gerado um orçamento.<br><br>
-
-                        Tenha um ótimo dia!<br><br>
-                        
-                        Atenciosamente,<br>
-                        [Seu Nome]<br>
-                        Analista da Samsung</p>
-                </div>
-
-                <button class="copy-button" onclick="copiarTexto(1)"><i class="fas fa-copy"></i></button>
-            </div>
-
-            <div class="flex-box">
-                <div class="script">
-                    <p>Para podermos avançar com a sua solicitação de serviço, precisamos de algumas informações sobre seu produto. Por favor, envie as seguintes informações:<br><br>
-                        
-                        Encaminhe anexos referentes à instalação do seu produto, conforme as solicitações abaixo:<br><br>
-
-                        - [Foto]: Local do Produto Instalado<br>
-                        - [Foto]: Etiqueta do Produto contendo Modelo e N° de série<br>
-                        - [Foto]: Tomada (127v ou 220v?)<br>
-                        - [Foto]: [Explicação do que você precisa]<br><br>
-
-                        Ou, se preferir, encaminhe um único vídeo de no máximo 2 minutos contendo todas as informações solicitadas anteriormente.<br><br>
-                        
-                        Agradecemos desde já pela sua colaboração.</p>
-                </div>
-
-                <button class="copy-button" onclick="copiarTexto(2)"><i class="fas fa-copy"></i></button>
-            </div>
-
-            <div class="flex-box">
-                <div class="script">
-                    <p>Agora, para garantir um melhor suporte, gostaríamos que realizasse alguns testes no seu produto. Isso nos ajudará a entender melhor o problema e oferecer a assistência necessária.<br><br>
-
-                        Por favor, siga os passos abaixo e nos forneça os resultados ou possíveis mensagens de erro que encontrar:<br><br>
-                        
-                        Teste 1: [Descreva o primeiro teste que deseja que o cliente faça]<br>
-                        Teste 2: [Descreva o segundo teste que deseja que o cliente faça]<br>
-                        Teste 3: [Descreva o terceiro teste que deseja que o cliente faça]<br><br>
-                        
-                        Tire fotos ou grave vídeos dos testes para nos auxiliar ainda mais na análise.<br><br>
-                        
-                        Agradecemos novamente pela sua colaboração e aguardamos a realização dos testes para prosseguirmos com a Ordem de Serviço.</p>
-                </div>
-
-                <button class="copy-button" onclick="copiarTexto(3)"><i class="fas fa-copy"></i></button>
-            </div>
-
-            <div class="flex-box">
-                <div class="script">
-                    <p>Caro Centro de Serviço,<br><br>
+                <div class="flex-box">
+                    <div class="script" onclick="copiarTexto(1)">
+                        <p>Agradecemos por fornecer as informações necessárias. A sua ordem de serviço foi registrada com o protocolo xxxxxxxxxx. Em até 24 horas, a assistência técnica entrará em contato para realizar a confirmação da visita.<br><br>
                             
-                     Identificamos que este produto, apesar de dentro do período da garantia, apresenta um possível evento fora de garantia.<br><br>
-                     O cliente está ciente que pode haver cobrança para a visita. Solicitamos que verifique as evidências em anexo e caso realmente concluído o evento fora de garantia, validar aprovação de pagamento da visita/orçamento de reparo com o cliente antes de realizar a visita.</p>
+                            Para casos de produtos em período de garantia com possível evento fora de garantia (exemplos: instalação indevida, uso em desacordo ou danos físicos) poderá ser gerado um orçamento.<br><br>
+
+                            Tenha um ótimo dia!<br><br>
+                            
+                            Atenciosamente,<br>
+                            [Seu Nome]<br>
+                            Analista da Samsung</p>
+                    </div>
                 </div>
 
-                <button class="copy-button" onclick="copiarTexto(4)"><i class="fas fa-copy"></i></button>
-            </div>
+                <div class="flex-box">
+                    <div class="script" onclick="copiarTexto(2)">
+                        <p>Para podermos avançar com a sua solicitação de serviço, precisamos de algumas informações sobre o seu produto. Por favor, envie as seguintes informações:<br><br>
+                            
+                            Encaminhe anexos referentes à instalação do seu produto, conforme as solicitações abaixo:<br><br>
 
-            <div class="flex-box">
-                <div class="script">
-                    <p><b>CLIENTE CIENTE QUE:</b><br><br>
-                        PARA CASOS DE PRODUTOS EM PERÍODO DE GARANTIA COM POSSÍVEL EVENTO FORA DE GARANTIA PODERÁ SER GERADO UM ORÇAMENTO;<br><br>
-                        
-                        FORA DE GARANTIA - A VISITA, PEÇAS E MÃO DE OBRA SERÃO COBRADAS;<br><br>
-                        
-                        PRAZO DE 24 HORAS ÚTEIS PARA CONTATO DA ASSISTÊNCIA TÉCNICA.</p>
+                            - [Foto]: Local do Produto Instalado<br>
+                            - [Foto]: Etiqueta do Produto contendo Modelo e N° de série<br>
+                            - [Foto]: Tomada (127v ou 220v?)<br>
+                            - [Foto]: [Explicação do que você precisa]<br><br>
+
+                            Ou, se preferir, encaminhe um único vídeo de no máximo 2 minutos contendo todas as informações solicitadas anteriormente.<br><br>
+                            
+                            Agradecemos desde já pela sua colaboração.</p>
+                    </div>
                 </div>
 
-                <button class="copy-button" onclick="copiarTexto(5)"><i class="fas fa-copy"></i></button>
+                <div class="flex-box">
+                    <div class="script" onclick="copiarTexto(3)">
+                        <p>Agora, para garantir um melhor suporte, gostaríamos que realizasse alguns testes no seu produto. Isso nos ajudará a entender melhor o problema e oferecer a assistência necessária.<br><br>
+
+                            Por favor, siga os passos abaixo e nos forneça os resultados ou possíveis mensagens de erro que encontrar:<br><br>
+                            
+                            Teste 1: [Descreva o primeiro teste que deseja que o cliente faça]<br>
+                            Teste 2: [Descreva o segundo teste que deseja que o cliente faça]<br>
+                            Teste 3: [Descreva o terceiro teste que deseja que o cliente faça]<br><br>
+                            
+                            Tire fotos ou grave vídeos dos testes para nos auxiliar ainda mais na análise.<br><br>
+                            
+                            Agradecemos novamente pela sua colaboração e aguardamos a realização dos testes para prosseguirmos com a Ordem de Serviço.</p>
+                    </div>
+                </div>
+
             </div>
 
-        </div>
+            <div class="gcic-box">
+
+                <h2>Script - G-CIC</h2>
+
+                <div class="flex-box">
+                    <div class="script" onclick="copiarTexto(4)">
+                        <p>Caro Centro de Serviço,<br><br>
+                                
+                        Identificamos que este produto, apesar de dentro do período da garantia, apresenta um possível evento fora de garantia.<br><br>
+                        O cliente está ciente que pode haver cobrança para a visita. Solicitamos que verifique as evidências em anexo e caso realmente concluído o evento fora de garantia, validar aprovação de pagamento da visita/orçamento de reparo com o cliente antes de realizar a visita.</p>
+                    </div>
+                </div>
+
+                
+                <div class="flex-box" onclick="copiarTexto(5)">
+                    <div class="script">
+                        <p>AO FRONT - AGUARDANDO RESPOSTA DO CONSUMIDOR<br><br>
+                        
+                        TENTATIVA DE CONTATO VIA SPRINKLR NO TELEFONE XXXXXXXXXX - DATA | HORA<br><br>
+                        
+                        MOTIVO:<br><br>
+                    
+                        CASO CLIENTE ENTRE EM CONTATO, SOLICITE PARA VERIFICAR WHATSAPP.</p>
+                    </div>
+                </div>
+
+                <div class="flex-box" onclick="copiarTexto(6)">
+                    <div class="script">
+                        <p>INTERNO<br><br>
+
+                        SERVICE REQUEST CANCELADA, NÃO HOUVE RETORNO DO CLIENTE NO PRAZO DE 24H.<br><br>
+
+                        AO FRONT<br><br>
+                        
+                        TENTATIVA DE CONTATO VIA SPRINKLR NO TELEFONE XXXXXXXXXX - DATA | HORA<br><br>
+                                            
+                        SE O CLIENTE ENTRAR EM CONTATO, EFETUE O VISUAL SUPORTE E COLETE EVIDÊNCIAS DO OCORRIDO, BEM COMO ANEXOS DA INSTALAÇÃO DO PRODUTO.</p>
+                    </div>
+                </div>
+                
+            </div>
 
         <div class="footer_copyright">
             &copy; 2023 CroxisDev. Todos os direitos reservados.
