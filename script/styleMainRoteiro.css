@@ -31,7 +31,7 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -1; /* Coloca a camada de fundo atrás de todo o conteúdo */
-    opacity: 0.1; /* Ajuste a opacidade desejada (0.7 = 70%) */
+    opacity: 0.1; /* Ajuste a opacidade desejada (0.1 = 10%) */
 }
 
 body {
@@ -49,7 +49,7 @@ html {
 .menu {
     display: flex;
     position: fixed;
-    background-color: rgba(38, 38, 38, 0.5); /* Cor de fundo com 50% de opacidade */
+    background-color: rgba(38, 38, 38, 0.5);
     color: #fff;
     justify-content: space-between;
     padding: 1.5rem 6rem;
@@ -107,32 +107,70 @@ html {
 
 /* INICIO - Script */
 
-.script-box {
+.sprinklr-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 8%;
     font-size: 11px;
     max-width: auto;
+    background-color: rgba(255, 255, 255, 0.01);
+    padding: 1%;
+    margin: 1%;
+    margin-top: 8%;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgb(255, 1, 1);
 }
 
-.script {
-    background-color: rgb(247, 247, 247);
-    text-align: left;
-    padding: 1.2%;
-    margin: 12px 10px 12px 10px;
-    min-height: 110px;
-    max-height: 110px; /* Ajuste o valor conforme necessário */
-    overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo ultrapassar a altura máxima */
+.sprinklr-box h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+    color: aqua;
+}
+
+
+.gcic-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 11px;
+    max-width: auto;
+    background-color: rgba(255, 255, 255, 0.01);
+    padding: 1%;
+    margin: 1%;
+    margin-top: 4%;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgb(255, 1, 1);
+}
+
+.gcic-box h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+    color: aqua;
 }
 
 .flex-box {
     display: flex;
-    background-color: rgb(247, 247, 247);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: aliceblue;
     border-radius: 15px;
     max-width: 40%;
     margin: 0 60px 60px 60px;
 }
+
+.script {
+    text-align: left;
+    padding: 1.2%;
+    margin: 12px 10px 12px 10px;
+    min-height: 110px;
+    max-height: 110px;
+    overflow-y: auto;
+}
+
+.script::-webkit-scrollbar {
+    display: none;
+  }
 
 /* FIM - Script */
 
@@ -142,15 +180,16 @@ html {
     background: #333;
     border: none;
     height: 100%;
-    width: 80px;
+    width: 80px; /* Largura fixa */
     padding: 5px 10px;
-    margin: 0 0 0 0;
+    margin: 0;
     font-size: 16px;
     color: #000000;
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
 }
+
 
 .copy-button:focus {
     outline: none;
@@ -170,8 +209,8 @@ html {
 
 .footer_copyright {
     position: flex;
-    bottom: 0;
+    text-align: center;
     font-size: 14px;
     color: #888;
-    margin: 0 0 10px 35%;
+    margin: 10px 0;
 }
