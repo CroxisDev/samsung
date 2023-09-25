@@ -116,14 +116,10 @@ html {
   
 .dropdown li {
     padding: 10px;
-}
-  
-.dropdown li a {
-    text-decoration: none;
     color: black;
 }
-  
-.dropdown li a:hover {
+ 
+.dropdown li:hover {
     background-color: #e0e0e0;
 }
 
