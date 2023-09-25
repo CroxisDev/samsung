@@ -41,7 +41,9 @@ function copiarTexto(index) {
 
 // FIM - FUNÇÃO COPIAR TEXTO
 
-// Adicionar evento de clique a todos os botões com a classe "copy-button"
+// INICIO - NOTIFY
+
+// Adicionar evento de clique a todos os botões com a classe "SCRIPT"
 const copyButtons = document.querySelectorAll('.script');
 copyButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -60,4 +62,21 @@ function exibirNotificacaoDeSucesso() {
   });
 }
 
+const nameBtn = document.querySelectorAll('.notify');
+nameBtn.forEach(button => {
+  button.addEventListener('click', () => {
+    exibirNotificacao();
+  });
+});
+
+function exibirNotificacao() {
+  iziToast.success({
+    message: 'Nome Alterado!',
+    position: 'bottomRight',
+    timeout: 5000, // Tempo em milissegundos que a notificação será exibida (5 segundos neste exemplo)
+    closeOnClick: true, // Fechar a notificação ao clicar nela
+    pauseOnHover: true, // Pausar o tempo limite da notificação quando o mouse estiver sobre ela
+    progressBar: true, // Mostrar uma barra de progresso
+  });
+}
 // FIM - Notificação
