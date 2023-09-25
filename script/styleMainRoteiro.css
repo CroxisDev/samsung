@@ -103,6 +103,30 @@ html {
     transform: scale(1.10);
 }
 
+/*Lista DropDown*/
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 1;
+}
+  
+.dropdown li {
+    padding: 10px;
+}
+  
+.dropdown li a {
+    text-decoration: none;
+    color: black;
+}
+  
+.dropdown li a:hover {
+    background-color: #e0e0e0;
+}
+
 /* FIM - Estilização do Menu */
 
 /* INICIO - Script */
