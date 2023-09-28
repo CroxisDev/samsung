@@ -1,6 +1,6 @@
 function atualizarTexto(nomeSelecionado) {
     // Atualizar o texto para todos os parágrafos
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
       const mensagemElement = document.getElementById(`mensagem${i}`);
       const nomeSelecionadoElement = document.getElementById(`nomeSelecionado${i}`);
       
