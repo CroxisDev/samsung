@@ -80,3 +80,26 @@ function exibirNotificacao() {
   });
 }
 // FIM - Notificação
+
+// INICIO - DATA E HORA
+
+function atualizarDataHora() {
+    const elementoDataHora = document.getElementById('dataHora');
+    const dataHoraAtual = new Date();
+    const dia = dataHoraAtual.getDate().toString().padStart(2, '0');
+    const mes = (dataHoraAtual.getMonth() + 1).toString().padStart(2, '0');
+    const ano = dataHoraAtual.getFullYear();
+    const hora = dataHoraAtual.getHours().toString().padStart(2, '0');
+    const minuto = dataHoraAtual.getMinutes().toString().padStart(2, '0');
+
+    const dataFormatada = `${dia}.${mes}.${ano} | ${hora}:${minuto}`;
+    elementoDataHora.textContent = dataFormatada;
+}
+
+// Atualizar a data e hora a cada minuto
+setInterval(atualizarDataHora, 60000);
+
+// Chamar a função pela primeira vez para exibir a data e hora inicial
+atualizarDataHora();
+
+// FIM - DATA E HORA
