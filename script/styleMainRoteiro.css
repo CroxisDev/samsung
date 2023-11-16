@@ -112,6 +112,7 @@ html {
     border: 1px solid #ccc;
     position: absolute;
     z-index: 1;
+    cursor: pointer;
 }
   
 .dropdown li {
@@ -175,8 +176,9 @@ html {
     background-color: rgba(255, 255, 255, 0.1);
     color: aliceblue;
     border-radius: 15px;
-    max-width: 40%;
+    width: 40%;
     margin: 0 60px 60px 60px;
+    cursor: pointer;
 }
 
 .flex-box:hover {
@@ -233,7 +235,6 @@ html {
 /*Estilização Footer*/
 
 .footer_copyright {
-    position: flex;
     text-align: center;
     font-size: 14px;
     color: #888;
