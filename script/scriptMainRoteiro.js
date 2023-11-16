@@ -43,8 +43,8 @@ function copiarTexto(index) {
 
 // INICIO - NOTIFY
 
-// Adicionar evento de clique a todos os botões com a classe "SCRIPT"
-const copyButtons = document.querySelectorAll('.script');
+// Adicionar evento de clique a todos os botões com a classe "flex-box"
+const copyButtons = document.querySelectorAll('.flex-box');
 copyButtons.forEach(button => {
   button.addEventListener('click', () => {
     exibirNotificacaoDeSucesso();
