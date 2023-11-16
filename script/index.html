@@ -31,9 +31,7 @@
 
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="https://www.croxisdev.com.br" class="nav-link"><i class="fa-solid fa-house"></i></a></li>
-
-                    <li class="nav-item"><a href="https://www.croxisdev.com.br/form" class="nav-link" target="_blank" title="Formulário"><i class="fa-brands fa-wpforms"></i></a></li>
+                    <li class="nav-item"><a href="https://croxisdev.com.br/script/" class="nav-link"><i class="fa-solid fa-house"></i></a></li>
 
                     <li class="nav-item"><a href="https://www.samsung.com/br/" class="nav-link" target="_blank"><img height="22px" width="22px" src="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/Favicon.png"></a></li>
 
@@ -46,14 +44,14 @@
                     <li class="nav-item" onmouseover="showDropdown()" onmouseout="hideDropdown()">
                         <div class="nav-link"><i class="fa-solid fa-user"></i></div>
                         <ul class="dropdown" id="dropdownMenu">
-                          <li class="notify"><div onclick="selecionarNome('Eduardo')">Eduardo</div></li>
-                          <li class="notify"><div onclick="selecionarNome('Felipe')">Felipe</div></li>
-                          <li class="notify"><div onclick="selecionarNome('Heloisa')">Heloisa</div></li>
-                          <li class="notify"><div onclick="selecionarNome('Jefferson')">Jefferson</div></li>
-                          <li class="notify"><div onclick="selecionarNome('Jonas')">Jonas</div></li>
-                          <li class="notify"><div onclick="selecionarNome('Ruth')">Ruth</div></li>
-                          <li class="notify"><div onclick="selecionarNome('Vinicius')">Vinicius</div></li>
-                          <li class="notify"><div onclick="selecionarNome('Wellen')">Wellen</div></li>
+                          <li class="notify" onclick="selecionarNome('Eduardo')">Eduardo</li>
+                          <li class="notify" onclick="selecionarNome('Felipe')">Felipe</li>
+                          <li class="notify" onclick="selecionarNome('Heloisa')">Heloisa</li>
+                          <li class="notify" onclick="selecionarNome('Jefferson')">Jefferson</li>
+                          <li class="notify" onclick="selecionarNome('Jonas')">Jonas</li>
+                          <li class="notify" onclick="selecionarNome('Ruth')">Ruth</li>
+                          <li class="notify" onclick="selecionarNome('Vinicius')">Vinicius</li>
+                          <li class="notify" onclick="selecionarNome('Wellen')">Wellen</li>
                         </ul>
                     </li>
 
@@ -71,8 +69,8 @@
 
                 <h2>Script - Sprinklr</h2>
 
-                <div class="flex-box">
-                    <div class="script" onclick="copiarTexto(0)">
+                <div class="flex-box" onclick="copiarTexto(0)">
+                    <div class="script">
                         <p id="mensagem0">Olá,<br><br>
 
                         Eu sou <span id="nomeSelecionado0">[Seu nome]</span>, Consultor Técnico Samsung. Para podermos dar continuidade à sua solicitação de serviço, precisamos realizar alguns procedimentos.<br><br>
@@ -81,8 +79,8 @@
                     </div>
                 </div>
 
-                <div class="flex-box">
-                    <div class="script" onclick="copiarTexto(1)">
+                <div class="flex-box" onclick="copiarTexto(1)">
+                    <div class="script">
                         <p id="mensagem1">Agradecemos por fornecer as informações necessárias. A sua ordem de serviço foi registrada com o protocolo xxxxxxxxxx. Em até 24 HORAS ÚTEIS, a assistência técnica entrará em contato para realizar a confirmação da visita.<br><br>
                             
                             Para casos de produtos em período de garantia com possível evento fora de garantia (exemplos: instalação indevida, uso em desacordo ou danos físicos) poderá ser gerado um orçamento.<br><br>
@@ -97,8 +95,8 @@
                     </div>
                 </div>
 
-                <div class="flex-box">
-                    <div class="script" onclick="copiarTexto(2)">
+                <div class="flex-box" onclick="copiarTexto(2)">
+                    <div class="script">
                         <p>Precisamos de algumas informações sobre o seu produto. Por favor, encaminhe anexos referentes ao seu produto, conforme as solicitações abaixo:<br><br>
 
                             - [Foto]: Local do Produto Instalado<br>
@@ -151,8 +149,8 @@
 
                 <h2>Script - G-CIC</h2>
 
-                <div class="flex-box">
-                    <div class="script" onclick="copiarTexto(6)">
+                <div class="flex-box" onclick="copiarTexto(6)">
+                    <div class="script">
                         <p>Caro Centro de Serviço,<br><br>
                                 
                         Identificamos que este produto, apesar de dentro do período da garantia, apresenta um possível evento fora de garantia.<br><br>
@@ -180,7 +178,7 @@
                             FOI REALIZADO UMA TENTATIVA DE CONTATO VIA SPRINKLR PARA EFETUAR AS VALIDAÇÕES ADICIONAIS, PORÉM, NÃO HOUVE RETORNO DO CONSUMIDOR.<br><br> PORTANTO, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br><br>
     
                             DEFEITO REPORTADO:<br><br></p>
-                        </div>
+                    </div>
                 </div>
 
                 <div class="flex-box" onclick="copiarTexto(9)">
@@ -190,7 +188,7 @@
                             FOI REALIZADO CONTATO VIA SPRINKLR PARA EFETUAR AS VALIDAÇÕES ADICIONAIS.<br><br> PORTANTO, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br><br>
     
                             DEFEITO REPORTADO:<br><br></p>
-                        </div>
+                    </div>
                 </div>
 
                 <div class="flex-box" onclick="copiarTexto(10)">
@@ -239,7 +237,8 @@
                         DEFEITO REPORTADO:<br></p>
                     </div>
                 </div>
-
+            </div>
+            
         <div class="footer_copyright">
             &copy; 2023 CroxisDev. Todos os direitos reservados.
         </div>
