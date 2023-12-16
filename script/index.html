@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
     <header>
         <nav class="menu">
 
@@ -64,135 +65,232 @@
     
     <main>
 
-            <div class="sprinklr-box">
+        <div class="flex-box" style="margin-top: 6%;"> 
 
-                <h2>Script - Sprinklr</h2>
+            <h2>SPRINKLR</h2>
 
-                <div class="flex-box" onclick="copiarTexto(0)">
-                    <div class="script">
-                        <p id="mensagem0">Olá,<br><br>
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Mensagem Inicial</h4>
+                </div>
+
+                <div class="box-content" onclick="copiarTexto(0)">
+                    <p id="mensagem0">Olá,<br><br>
 
                         Eu sou <span id="nomeSelecionado0">[Seu nome]</span>, Consultor Técnico Samsung. Para podermos dar continuidade à sua solicitação de serviço, precisamos realizar alguns procedimentos.<br><br>
 
-                        Você está disponível no momento?</p>
-                    </div>
+                        Você está disponível no momento?</p>            
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Encaminhamento da S.O</h4>
                 </div>
 
-                <div class="flex-box" onclick="copiarTexto(1)">
-                    <div class="script">
-                        <p id="mensagem1">Agradecemos por fornecer as informações necessárias. A sua ordem de serviço foi registrada com o protocolo xxxxxxxxxx. Em até 24 HORAS ÚTEIS, a assistência técnica entrará em contato para realizar a confirmação da visita.<br><br>
+                <div class="box-content" onclick="copiarTexto(1)">
+                    <p id="mensagem1">Agradecemos por fornecer as informações necessárias. A sua ordem de serviço foi registrada com o protocolo xxxxxxxxxx. Em até 24 HORAS ÚTEIS, a assistência técnica entrará em contato para realizar a confirmação da visita.<br><br>
                             
-                            Para casos de produtos em período de garantia com possível evento fora de garantia (exemplos: instalação indevida, uso em desacordo ou danos físicos) poderá ser gerado um orçamento.<br><br>
+                        Para casos de produtos em período de garantia com possível evento fora de garantia (exemplos: instalação indevida, uso em desacordo ou danos físicos) poderá ser gerado um orçamento.<br><br>
 
-                            Fora de Garantia: Visita, Peças e Mão de obra serão cobradas.<br><br>
+                        Fora de Garantia: Visita, Peças e Mão de obra serão cobradas.<br><br>
 
-                            Tenha um ótimo dia!<br><br>
-                            
-                            Atenciosamente,<br>
-                            <span id="nomeSelecionado1">[Seu nome]</span><br>
-                            Consultor Técnico Samsung</p>
-                    </div>
+                        Tenha um ótimo dia!<br><br>
+                        
+                        Atenciosamente,<br>
+                        <span id="nomeSelecionado1">[Seu nome]</span><br>
+                        Consultor Técnico Samsung</p>            
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Solicitação de Evidências</h4>
                 </div>
 
-                <div class="flex-box" onclick="copiarTexto(2)">
-                    <div class="script">
-                        <p>Precisamos de algumas informações sobre o seu produto. Por favor, encaminhe anexos referentes ao seu produto, conforme as solicitações abaixo:<br><br>
+                <div class="box-content" onclick="copiarTexto(2)">
+                    <p>Precisamos de algumas informações sobre o seu produto. Por favor, encaminhe anexos referentes ao seu produto, conforme as solicitações abaixo:<br><br>
 
-                            - [Foto]: Local do Produto Instalado<br>
-                            - [Foto]: Etiqueta do Produto contendo Modelo e N° de série<br>
-                            - [Foto]: Tomada (127v ou 220v?)<br><br>
+                        - [Foto]: Local do Produto Instalado<br>
+                        - [Foto]: Etiqueta do Produto contendo Modelo e N° de série<br>
+                        - [Foto]: Tomada (127v ou 220v?)<br><br>
 
-                            - [Vídeo]: Defeito reportado (Se possível, enquanto mostra o defeito descreva a situação!)<br><br>
+                        - [Vídeo]: Defeito reportado (Se possível, enquanto mostra o defeito descreva a situação!)<br><br>
 
-                            Ou, se preferir, encaminhe um único vídeo de no máximo 2 minutos contendo todas as informações solicitadas anteriormente.<br><br>
-                            
-                            Agradecemos desde já pela sua colaboração.</p>
-                    </div>
+                        Ou, se preferir, encaminhe um único vídeo de no máximo 2 minutos contendo todas as informações solicitadas anteriormente.<br><br>
+                        
+                        Agradecemos desde já pela sua colaboração.</p>            
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Problema Solucionado</h4>
                 </div>
 
-                <div class="flex-box" onclick="copiarTexto(3)">
-                    <div class="script">
-                        <p>Olá!<br><br>
+                <div class="box-content" onclick="copiarTexto(3)">
+                    <p id="mensagem2">Como seu problema foi solucionado estaremos encerrando a sua solicitação de serviço!<br><br>
+                            
+                        Caso necessite de suporte novamente, entre em contato no link abaixo:<br><br>
+                    
+                        https://www.samsung.com/br/support/contact<br><br>
 
-                        Como não foi possivel realizar as validações adicionais necessarias, não foi possivel seguirmos com sua solicitação de serviço.<br><br>
+                        Atenciosamente,<br>
+                        <span id="nomeSelecionado2">[Seu nome]</span><br>
+                        Consultor Técnico Samsung</p>            
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Recusa do Consumidor em Fornecer Evidências</h4>
+                </div>
+
+                <div class="box-content" onclick="copiarTexto(4)">
+                    <p>Compreendo a sua situação; no entanto, é essencial encaminhar por este canal as validações adicionais. Essa medida nos permitirá oferecer o suporte mais eficaz para o reparo do seu produto.<br><br>
+
+                    A disponibilização de informações detalhadas possibilita uma identificação mais precisa do que pode estar impactando o funcionamento do produto.</p>          
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Ofensas por Parte do Consumidor</h4>
+                </div>
+
+                <div class="box-content" onclick="copiarTexto(5)">
+                    <p id="mensagem3">Olá!<br><br>
+
+                        Devido à impossibilidade de realizar as validações adicionais necessárias, não podemos prosseguir com a sua solicitação de serviço no momento.<br><br>
                         
                         Caso ainda precise de atendimento, entre em contato no link abaixo:<br><br>
                         
-                        https://www.samsung.com/br/support/contact</p>
-                    </div>
+                        https://www.samsung.com/br/support/contact<br><br>
+
+                        Atenciosamente,<br>
+                        <span id="nomeSelecionado3">[Seu nome]</span><br>
+                        Consultor Técnico Samsung</p>          
                 </div>
-
-                <div class="flex-box" onclick="copiarTexto(4)">
-                    <div class="script">
-                        <p id="mensagem2">Como seu problema foi solucionado estaremos encerrando sua solicitação de serviços!<br><br>
-                            
-                            Caso necessite de suporte novamente, entre em contato no link abaixo:<br><br>
-                        
-                            https://www.samsung.com/br/support/contact<br><br>
-
-                            Atenciosamente,<br>
-                            <span id="nomeSelecionado2">[Seu nome]</span><br>
-                            Consultor Técnico Samsung</p>
-                    </div>
-                </div>
-
-                <div class="flex-box" onclick="copiarTexto(5)">
-                    <div class="script">
-                        <br><p>Entendo o seu posicionamento, porém, será necessário encaminhar por este canal de comunicação essas validações adicionais para prestarmos o melhor suporte no reparo do seu produto.</p>
-                    </div>
-                </div>
-
             </div>
 
-            <div class="gcic-box">
 
-                <h2>Script - G-CIC</h2>
+        </div>
 
-                <div class="flex-box" onclick="copiarTexto(6)">
-                    <div class="script">
-                        <p>Caro Centro de Serviço,<br><br>
-                                
-                        Identificamos que este produto, apesar de dentro do período da garantia, apresenta um possível evento fora de garantia.<br><br>
-                        O cliente está ciente que pode haver cobrança para a visita. Solicitamos que verifique as evidências em anexo e caso realmente concluído o evento fora de garantia, validar aprovação de pagamento da visita/orçamento de reparo com o cliente antes de realizar a visita.</p>
-                    </div>
+
+        <div class="flex-box">
+
+            <h2>G-CIC</h2>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Interação com a ASC | Exclusão de Garantia - LP</h4>
                 </div>
 
-                
-                <div class="flex-box" onclick="copiarTexto(7)">
-                    <div class="script">
-                        <p>AO FRONT - AGUARDANDO RESPOSTA DO CONSUMIDOR<br><br>
+                <div class="box-content" onclick="copiarTexto(6)">
+                    <p>Caro Centro de Serviço,<br><br>
+                                
+                        Identificamos que este produto, apesar de dentro do período da garantia, apresenta um possível evento fora de garantia.<br><br>
+
+                        O cliente está ciente que pode haver cobrança para a visita. Solicitamos que verifique as evidências em anexo e caso realmente concluído o evento fora de garantia, validar aprovação de pagamento da visita/orçamento de reparo com o cliente antes de realizar a visita.<br>
+                    </p>            
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Interação com a ASC | Fora de Garantia - OW</h4>
+                </div>
+
+                <div class="box-content" onclick="copiarTexto(7)">
+                    <p>Caro Centro de Serviço,<br><br>
+
+                        Observamos que este produto está fora do período de garantia.<br><br>
+
+                        O cliente está ciente de que pode haver uma taxa para a visita. Solicitamos que realize a validação da aprovação do pagamento referente à visita/orçamento antes da realização do serviço.<br>
+                    </p>            
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Fora do Prazo 4h - Sem validação</h4>
+                </div>
+
+                <div class="box-content" onclick="copiarTexto(8)">
+                    <p>INTERNO<br><br>
+
+                        NÃO FOI POSSÍVEL REALIZAR AS VALIDAÇÕES ADICIONAIS, PORÉM, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br><br>
+
+                    </p>           
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Posicionamento de Tentativa de Contato</h4>
+                </div>
+
+                <div class="box-content" onclick="copiarTexto(9)">
+                    <p>AO FRONT - AGUARDANDO RESPOSTA DO CONSUMIDOR<br><br>
                         
                         TENTATIVA DE CONTATO VIA SPRINKLR NO TELEFONE XXXXXXXXXX - <span id="dataHora"></span><br><br>
                         
                         MOTIVO: ANEXOS DA INSTALAÇÃO + EVIDÊNCIAS DO OCORRIDO.<br><br>
                     
-                        CASO CLIENTE ENTRE EM CONTATO, SOLICITE PARA VERIFICAR WHATSAPP.<br></p>
-                    </div>
+                        CASO CLIENTE ENTRE EM CONTATO, SOLICITE PARA VERIFICAR WHATSAPP.<br>
+                    </p>            
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Não houve retorno no Sprinklr</h4>
                 </div>
 
-                <div class="flex-box" onclick="copiarTexto(8)">
-                    <div class="script">
-                        <p>INTERNO<br><br>
+                <div class="box-content" onclick="copiarTexto(10)">
+                    <p>INTERNO<br><br>
 
-                            FOI REALIZADO UMA TENTATIVA DE CONTATO VIA SPRINKLR PARA EFETUAR AS VALIDAÇÕES ADICIONAIS, PORÉM, NÃO HOUVE RETORNO DO CONSUMIDOR.<br><br> PORTANTO, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br><br>
-    
-                            DEFEITO REPORTADO:<br><br></p>
-                    </div>
+                        FOI REALIZADO UMA TENTATIVA DE CONTATO VIA SPRINKLR PARA EFETUAR AS VALIDAÇÕES ADICIONAIS, PORÉM, NÃO HOUVE RETORNO DO CONSUMIDOR.<br><br> PORTANTO, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br><br>
+
+                        DEFEITO REPORTADO:<br><br>
+                    </p>      
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Realizado validações adicionais via Sprinklr</h4>
                 </div>
 
-                <div class="flex-box" onclick="copiarTexto(9)">
-                    <div class="script">
-                        <p>INTERNO<br><br>
+                <div class="box-content" onclick="copiarTexto(11)">
+                    <p>INTERNO<br><br>
 
-                            FOI REALIZADO CONTATO VIA SPRINKLR PARA EFETUAR AS VALIDAÇÕES ADICIONAIS.<br><br> PORTANTO, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br><br>
-    
-                            DEFEITO REPORTADO:<br><br></p>
-                    </div>
+                        FOI REALIZADO CONTATO VIA SPRINKLR PARA EFETUAR AS VALIDAÇÕES ADICIONAIS.<br><br> PORTANTO, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br><br>
+
+                        DEFEITO REPORTADO:<br><br></p>
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Cancelamento de S.R | Pedido do Consumidor</h4>
                 </div>
 
-                <div class="flex-box" onclick="copiarTexto(10)">
-                    <div class="script">
-                        <p>INTERNO<br><br>
+                <div class="box-content" onclick="copiarTexto(12)">
+                    <p>INTERNO<br><br>
 
                         SERVICE REQUEST CANCELADA A PEDIDO DO CONSUMIDOR!<br><br>
 
@@ -201,50 +299,44 @@
                         AO FRONT<br><br>
                                             
                         CASO O CONSUMIDOR NECESSITE DE SUPORTE NOVAMENTE, EFETUE O VISUAL SUPORTE E COLETE EVIDÊNCIAS DO OCORRIDO, BEM COMO ANEXOS DA INSTALAÇÃO DO PRODUTO.<br></p>
-                    </div>
+                </div>
+            </div>
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Cancelamento de S.R | Duplicado</h4>
                 </div>
 
-                <div class="flex-box" onclick="copiarTexto(11)">
-                    <div class="script">
-                        <p>Caro triador, baseado no modelo/sintoma reportado, as peças recomendadas para esse reparo são:<br><br>
-
-                            Peça sugerida 1:<br>
-                            Peça sugerida 2:<br>
-                            Peça sugerida 3:<br><br>
-                            
-                            Por favor, replicar essa interação e fazer a solicitação das peças após o contato e confirmação com o consumidor.<br>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex-box" onclick="copiarTexto(12)">
-                    <div class="script">
-                        <p>INTERNO<br><br>
+                <div class="box-content" onclick="copiarTexto(13)">
+                    <p>INTERNO<br><br>
 
                         SERVICE REQUEST CANCELADA || ORDEM DE SERVIÇO EMITIDO EM OUTRO PROTOCOLO<br><br>
 
                         N° DO PROTOCOLO:<br></p>
-                    </div>
                 </div>
-
-                <div class="flex-box" onclick="copiarTexto(13)">
-                    <div class="script">
-                        <p>INTERNO<br><br>
-
-                        NÃO FOI POSSÍVEL REALIZAR AS VALIDAÇÕES ADICIONAIS, PORÉM, ESTÁ SENDO DADA CONTINUIDADE À SOLICITAÇÃO DE SERVIÇO!<br></p>
-                    </div>
-                </div>
-
-                <div class="flex-box" onclick="copiarTexto(14)">
-                    <div class="script">
-                        <p>Caro Centro de Serviço,<br><br>
-                       Identificamos que este produto está fora de garantia.<br><br>
-                       Consumidor ciente que pode haver cobrança para a visita. Solicitamos que verifique as evidências em anexo e caso realmente concluído o evento fora de garantia, validar aprovação de pagamento da visita/orçamento de reparo com o cliente antes de realizar a visita.<br></p>
-                    </div>
-                </div>
-
             </div>
-            
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Consulta de Peças</h4>
+                </div>
+
+                <div class="box-content" onclick="copiarTexto(13)">
+                    <p>Caro triador, baseado no modelo/sintoma reportado, as peças recomendadas para esse reparo são:<br><br>
+
+                        Peça sugerida 1:<br>
+                        Peça sugerida 2:<br>
+                        Peça sugerida 3:<br><br>
+                        
+                        Por favor, replicar essa interação e fazer a solicitação das peças após o contato e confirmação com o consumidor.<br>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
         <div class="footer_copyright">
             &copy; 2023 CroxisDev. Todos os direitos reservados.
         </div>
