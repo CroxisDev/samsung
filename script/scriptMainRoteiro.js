@@ -23,7 +23,7 @@ window.addEventListener('scroll', () => {
 
 function copiarTexto(index) {
     // Selecione o texto da div correspondente ao índice
-    const divs = document.querySelectorAll('.script p');
+    const divs = document.querySelectorAll('.box-content p');
     const textoParaCopiar = divs[index].innerText;
 
     // Crie um elemento de texto temporário para copiar o texto
@@ -43,8 +43,8 @@ function copiarTexto(index) {
 
 // INICIO - NOTIFY
 
-// Adicionar evento de clique a todos os botões com a classe "flex-box"
-const copyButtons = document.querySelectorAll('.flex-box');
+// Adicionar evento de clique a todos os botões com a classe "box-main"
+const copyButtons = document.querySelectorAll('.box-content');
 copyButtons.forEach(button => {
   button.addEventListener('click', () => {
     exibirNotificacaoDeSucesso();
