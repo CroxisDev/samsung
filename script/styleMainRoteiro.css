@@ -126,111 +126,90 @@ html {
 
 /* FIM - Estilização do Menu */
 
-/* INICIO - Script */
+/* INICIO - MAIN PAGE */
 
-.sprinklr-box {
+.box-main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 11px;
-    max-width: auto;
-    background-color: rgba(255, 255, 255, 0.01);
-    padding: 1%;
-    margin: 1%;
-    margin-top: 8%;
-    border-radius: 15px;
-    box-shadow: 0 0 3px rgb(255, 1, 1);
+    background-color: transparent;
+    margin: 3%;
+    height: 20%;
+    max-width: 35%;
+    min-width: 35%;
+    position: relative;
 }
 
-.sprinklr-box h2 {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 50px;
-    color: aqua;
+.box-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; /* Adicionado para estender a largura até o lado direito */
+    background-color: #202020;
+    box-shadow: 0 0 10px rgba(235, 233, 233, 0.2);
+    height: 34%;
+    width: 97.5%;
+    margin: auto;
+    padding: 2%;
+    border-radius: 2px;
+    z-index: 1;
 }
 
+.box-title h4{
+    margin-left: 5%;
+    color: white;
+}
 
-.gcic-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 11px;
-    max-width: auto;
-    background-color: rgba(255, 255, 255, 0.01);
-    padding: 1%;
-    margin: 1%;
+.box-content {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(235, 233, 233, 0.4);
     margin-top: 4%;
-    border-radius: 15px;
-    box-shadow: 0 0 3px rgb(255, 1, 1);
+    padding: 5%;
+    border-radius: 2px;
+    z-index: 0;
+    min-height: 180px;
+    max-height: 180px;
+    width: 100%;
+    overflow-y: auto;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
 }
 
-.gcic-box h2 {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 50px;
-    color: aqua;
+.box-content p{
+    padding: 1%;
+    margin-top: 1%;
+    user-select: none;
+    font-size: 11px;
+
+}
+
+.box-content:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.box-content::-webkit-scrollbar {
+    display: none;
 }
 
 .flex-box {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: aliceblue;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: auto;
+    background-color: rgba(255, 255, 255, 0.01);
+    padding: 1%;
+    margin: 1%;
+    margin-top: 2%;
     border-radius: 15px;
-    width: 40%;
-    margin: 0 60px 60px 60px;
-    cursor: pointer;
+    box-shadow: 0 0 3px rgb(255, 1, 1);
 }
 
-.flex-box:hover {
-    background-color: rgba(255, 255, 255, 0.19);
+.flex-box h2 {
+    text-align: center;
+    width: 100%;
+    color: aqua;
 }
-
-.script {
-    text-align: left;
-    padding: 1.2%;
-    margin: 12px 10px 12px 10px;
-    min-height: 110px;
-    max-height: 110px;
-    overflow-y: auto;
-    cursor: pointer;
-}
-
-.script::-webkit-scrollbar {
-    display: none;
-  }
-
-/* FIM - Script */
-
-/*INICIO - Estilo botão de copiar */
-
-.copy-button {
-    background: #333;
-    border: none;
-    height: 100%;
-    width: 80px; /* Largura fixa */
-    padding: 5px 10px;
-    margin: 0;
-    font-size: 16px;
-    color: #000000;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-
-.copy-button:focus {
-    outline: none;
-}
-
-.copy-button:hover {
-    background-color: #000000;
-    color: white;
-}
-
-.copy-button:active {
-    transform: scale(1.02);
-}
-/*FIM - Estilo botão copiar*/
 
 /*Estilização Footer*/
 
@@ -238,5 +217,7 @@ html {
     text-align: center;
     font-size: 14px;
     color: #888;
-    margin: 10px 0;
+    margin: 10px 0 5px 0;
+    width: 100%;
+    padding: 1%;
 }
