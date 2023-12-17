@@ -211,6 +211,18 @@ html {
     color: aqua;
 }
 
+@media screen and (max-width: 1320px) {
+
+    .box-title {
+        height: 28%;
+    }
+
+    .box-content {
+        margin-top: 8%;
+    }
+}
+
+
 /*Estilização Footer*/
 
 .footer_copyright {
