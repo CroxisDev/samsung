@@ -147,7 +147,7 @@ html {
     right: 0; /* Adicionado para estender a largura até o lado direito */
     background-color: #202020;
     box-shadow: 0 0 10px rgba(235, 233, 233, 0.2);
-    height: 34%;
+    height: 30%;
     width: 97.5%;
     margin: auto;
     padding: 2%;
@@ -178,7 +178,7 @@ html {
 
 .box-content p{
     padding: 1%;
-    margin-top: 1%;
+    margin-top: 8%;
     user-select: none;
     font-size: 11px;
 
