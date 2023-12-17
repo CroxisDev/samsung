@@ -211,7 +211,7 @@ html {
     color: aqua;
 }
 
-@media screen and (max-width: 1320px) {
+@media screen and (min-width: 1320px) and (max-width: 1320px) {
 
     .box-title {
         height: 28%;
