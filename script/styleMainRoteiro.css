@@ -214,10 +214,10 @@ html {
 @media screen and (min-width: 1320px) and (max-width: 1320px) {
 
     .box-title {
-        height: 28%;
+        height: 30%;
     }
 
-    .box-content {
+    .box-content p{
         margin-top: 8%;
     }
 }
