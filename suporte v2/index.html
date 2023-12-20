@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <title>Suporte Técnico | CroxisDev</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt-BR">
+    <meta name="author" content="Felipe Mendes - RE: 1460500">
+    <meta name="description" content="Suporte Técnico">
+    <meta name="copyright" content="© 2023 CroxisDev">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" href="https://croxisdev.com.br/croxisdev.png">
+    <link rel="stylesheet" href="styleMainSuporte.css">
+    <link rel="stylesheet" href="styleContent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="menu">
+
+            <div class="logo">
+                <h1><a href="https://www.croxisdev.com.br" target="_blank">CroxisDev</a></h1>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="https://croxisdev.com.br/suporte/" class="nav-link"><i class="fa-solid fa-house"></i></a></li>
+
+                    <li class="nav-item"><a href="https://www.samsung.com/br/" class="nav-link" target="_blank"><img height="22px" width="22px" src="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/Favicon.png"></a></li>
+
+                    <li class="nav-item"><a href="http://bloo.sdslacc.local/" class="nav-link" target="_blank"><img height="22px" width="22px" src="https://croxisdev.com.br/suporte/img/bloo_ico.png"></a></li>
+
+                    <li class="nav-item"><a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" class="nav-link" target="_blank"><img style="border-radius: 7px;" height="22px" width="22px" src="https://www.uninassau.edu.br/sites/mauriciodenassau.edu.br/files/fields/imagemLateral/noticias/2018/03/imposto-de-renda-2018.png"></a></li>
+
+                    <li class="nav-item"><a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" class="nav-link" target="_blank"><img height="22px" width="22px" src="https://buscacepinter.correios.com.br/core/templates/bunker/img/favi-ect.png"></a></li>
+
+                </ul>
+                
+            </div>
+
+        </nav>
+
+    </header>
+    
+    <main>
+
+        <div class="flex-box">
+
+            <div class="box-main">
+
+                <div class="box-title"> 
+                    <h4>Suporte Técnico - Digital Appliances</h4>
+                </div>
+
+                <div class="box-content">
+
+                    <h2>Inquérito</h2>
+
+                    <textarea id="consumidor-resposta" spellcheck="false" placeholder="CONSUMIDOR INFORMA QUE... 
+                    Ex. LAVA E SECA APRESENTA CÓDIGO DE ERRO 5C"></textarea><br>
+                    
+                    <label>CS VIEW:</label><br>
+                    <select id="cs-view-resposta">
+                        <option value="" text-align: center;>-- Selecione uma opção --</option>
+                        <option value="SUBIU - CONFIRMADO">SUBIU - CONFIRMADO</option>
+                        <option value="SUBIU - NO MATCH">SUBIU - NO MATCH</option>
+                        <option value="NÃO SUBIU">NÃO SUBIU</option>
+                    </select><br><br>
+
+                    <label>Samsung Account:</label><br>
+                        <select id="sa-resposta">
+                            <option value="" text-align: center;>-- Selecione uma opção --</option>
+                            <option value="POSSUI - ESTÁ VINCULADO">ESTÁ VINCULADO</option>
+                            <option value="POSSUI - PERMITIU VINCULAR">PERMITIU VINCULAR</option>
+                            <option value="POSSUI - NÃO PERMITIU VINCULAR">NÃO PERMITIU VINCULAR</option>
+                            <option value="POSSUI - FALHA AO VINCULAR">FALHA AO VINCULAR</option>
+                            <option value="NÃO POSSUI - FOI OFERTADO">FOI OFERTADO</option>
+                            <option value="NÃO POSSUI">NÃO POSSUI</option>
+                        </select><br><br>
+
+                    <label>Marketing:</label><br>
+                        <select id="marketing-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="PERMITIDO">PERMITIDO</option>
+                            <option value="NEGADO">NEGADO</option>
+                        </select><br><br>
+
+                    <label>Retorno de Ligação:</label><br>
+                        <select id="retorno-ligacao-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="VERBALIZADO">VERBALIZADO</option>
+                            <option value="NÃO VERBALIZADO">NÃO VERBALIZADO</option>
+                            <option value="BEM SUCEDIDO">BEM-SUCEDIDO</option>
+                            <option value="MALSUCEDIDO">MALSUCEDIDO</option>
+                            <option value="OUTRA CHAMADA ENTROU NO LUGAR">ENTROU OUTRA CHAMADA</option>
+                        </select><br><br>
+
+                    <label>Protocolo por SMS:</label><br>
+                        <select id="protocolo-sms-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="PERMITIDO">PERMITIDO</option>
+                            <option value="NEGADO">NEGADO</option>
+                        </select><br><br>
+
+                    <label>Visual Suporte:</label><br>
+                        <select id="visual-resposta">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="UTILIZADO">Utilizado</option>
+                            <option value="NÃO UTILIZADO - FALHA NA FERRAMENTA">Falha na Ferramenta</option>
+                            <option value="NÃO UTILIZADO - CONSUMIDOR RECUSOU/SEM INTERNET">Consumidor Recusou/Sem Internet</option>
+                        </select><br><br>
+
+                    <button class="copy-button" onclick="copyinquerito('inquerito')"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer_copyright">
+            &copy; 2023 CroxisDev. Todos os direitos reservados.
+        </div>
+
+    </main>
+
+    <script src="scriptMainSuporte.js"></script>
+    <script src="scriptCopySuporte.js"></script>
+
+</body>
+</html>
