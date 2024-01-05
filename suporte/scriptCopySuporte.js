@@ -22,7 +22,7 @@ function copyinquerito() {
         CS VIEW: ${csView}
         SAMSUNG ACCOUNT: ${sa}
         MARKETING: ${marketing}
-        RETORNO DE LIGAÇÃO: ${retornoLigacao}
+        RETORNO DE LIGAÇÃO: ${retornoLigacao}`;
 
     copyToClipboard(copiedText);
 }
