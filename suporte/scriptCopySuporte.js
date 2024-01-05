@@ -380,6 +380,43 @@ copyToClipboard(copiedText);
 
 }
 
+// COPIAR FORNO
+
+function copyForno() {
+const voltagemTomada = document.getElementById('forno-tomada-voltagem-resposta').value;
+const Erro = document.getElementById('forno-erro-resposta').value;
+const luzLed = document.getElementById('forno-luz-resposta').value;
+const Manipulo = document.getElementById('forno-manipulo-resposta').value;
+const Porta = document.getElementById('forno-porta-resposta').value;
+const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+
+let copiedText = `${resolutionConsu}\n
+➤ | FORNO`;
+
+if (voltagemTomada !== '') {
+copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
+}
+
+if (Erro !== '') {
+copiedText += `\n           • CÓDIGO DE ERRO: ${Erro}`;
+}
+
+if (luzLed !== '') {
+copiedText += `\n           • LUZ INTERNA: ${luzLed}`;
+}
+
+if (Manipulo !== '') {
+copiedText += `\n           • MANÍPULO: ${Manipulo}`;
+}
+
+if (Porta !== '') {
+copiedText += `\n           • PORTA: ${Porta}`;
+}
+
+copyToClipboard(copiedText);
+
+}
+
 // FIM - FUNÇÃO COPIAR TEXTO
 
 // INICIO - SCRIPT PARA OCULTAR LAVADORA, REFRIGERADOR, ACN, POWERBOT E LAVA-LOUÇAS
