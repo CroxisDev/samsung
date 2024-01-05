@@ -380,55 +380,6 @@ copyToClipboard(copiedText);
 
 }
 
-// COPIAR ORDEM DE SERVIÇO
-
-function copyOrdemServico() {
-    const modelo = document.getElementById('modelo-resposta').value;
-    const numeroSerie = document.getElementById('numero-serie-resposta').value;
-    const notaFiscal = document.getElementById('nota-fiscal-resposta').value;
-    const emGarantia = document.getElementById('garantia-resposta').value;
-    const dataCompraElement = document.getElementById('data-compra-resposta');
-    const dataCompraValue = dataCompraElement.value;
-
-    let dataCompra = '';
-
-    if (dataCompraValue) {
-    const [ano, mes, dia] = dataCompraValue.split('-');
-    dataCompra = `${dia}/${mes}/${ano}`;
-    }
-
-    let copiedText = `ABERTURA DE ORDEM DE SERVIÇO\n\n        ✍| DADOS DO PRODUTO\n`;
-
-    if (modelo !== '') {
-    copiedText += `\n           • MODELO: ${modelo}`;
-    }
-
-    if (numeroSerie !== '') {
-    copiedText += `\n           • N° DE SÉRIE: ${numeroSerie}`;
-    }
-
-    if (notaFiscal !== '') {
-    copiedText += `\n           • N° NOTA FISCAL: ${notaFiscal}`;
-    }
-
-    if (dataCompra !== '') {
-    copiedText += `\n           • DATA DA COMPRA: ${dataCompra}`;
-    }
-
-    if (emGarantia !== '') {
-    copiedText += `\n           • GARANTIA: ${emGarantia}`;
-    }
-
-    copiedText += `\n
-            CLIENTE CIENTE QUE:
-                PARA CASOS DE PRODUTOS EM PERÍODO DE GARANTIA COM POSSÍVEL EVENTO FORA DE GARANTIA PODERÁ SER GERADO UM ORÇAMENTO;
-                FORA DE GARANTIA - A VISITA, PEÇAS E MÃO DE OBRA SERÃO COBRADAS;
-                PRAZO DE 24 HORAS ÚTEIS PARA CONTATO DA ASSISTÊNCIA TÉCNICA.`;
-
-    copyToClipboard(copiedText);
-
-}
-
 // FIM - FUNÇÃO COPIAR TEXTO
 
 // INICIO - SCRIPT PARA OCULTAR LAVADORA, REFRIGERADOR, ACN, POWERBOT E LAVA-LOUÇAS
