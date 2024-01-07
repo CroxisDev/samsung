@@ -17,15 +17,13 @@ function copyinquerito() {
     const sa = document.getElementById('sa-resposta').value;
     const marketing = document.getElementById('marketing-resposta').value;
     const retornoLigacao = document.getElementById('retorno-ligacao-resposta').value;
-    const protocoloSms = document.getElementById('protocolo-sms-resposta').value;
     const visual = document.getElementById('visual-resposta').value;
 
     let copiedText = `${consumidorInfo}\n
         CS VIEW: ${csView}
         SAMSUNG ACCOUNT: ${sa}
         MARKETING: ${marketing}
-        RETORNO DE LIGAÇÃO: ${retornoLigacao}
-        PROTOCOLO POR SMS: ${protocoloSms}`;
+        RETORNO DE LIGAÇÃO: ${retornoLigacao}`;
 
     if (visual !== '') {
         copiedText += `\n        VISUAL SUPORTE: ${visual}`;
@@ -33,17 +31,6 @@ function copyinquerito() {
         
 
     copyToClipboard(copiedText);
-}
-
-// COPIAR RESOLUÇÃO
-
-function copyResolution() {
-const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
-
-const copiedText = `${resolutionConsu}`;
-
-copyToClipboard(copiedText);
-
 }
 
 // COPIAR LAVA E SECA
@@ -388,58 +375,46 @@ copyToClipboard(copiedText);
 
 }
 
-// COPIAR ORDEM DE SERVIÇO
+// COPIAR FORNO
 
-function copyOrdemServico() {
-    const modelo = document.getElementById('modelo-resposta').value;
-    const numeroSerie = document.getElementById('numero-serie-resposta').value;
-    const notaFiscal = document.getElementById('nota-fiscal-resposta').value;
-    const emGarantia = document.getElementById('garantia-resposta').value;
-    const dataCompraElement = document.getElementById('data-compra-resposta');
-    const dataCompraValue = dataCompraElement.value;
-
-    let dataCompra = '';
-
-    if (dataCompraValue) {
-    const [ano, mes, dia] = dataCompraValue.split('-');
-    dataCompra = `${dia}/${mes}/${ano}`;
+function copyForno() {
+    const voltagemTomada = document.getElementById('forno-tomada-voltagem-resposta').value;
+    const Erro = document.getElementById('forno-erro-resposta').value;
+    const luzLed = document.getElementById('forno-luz-resposta').value;
+    const Manipulo = document.getElementById('forno-manipulo-resposta').value;
+    const Porta = document.getElementById('forno-porta-resposta').value;
+    const resolutionConsu = document.getElementById('informado-consumidor-resposta').value;
+    
+    let copiedText = `${resolutionConsu}\n
+    ➤ | FORNO`;
+    
+    if (voltagemTomada !== '') {
+    copiedText += `\n           • VOLTAGEM DA TOMADA: ${voltagemTomada}`;
     }
-
-    let copiedText = `ABERTURA DE ORDEM DE SERVIÇO\n\n        ✍| DADOS DO PRODUTO\n`;
-
-    if (modelo !== '') {
-    copiedText += `\n           • MODELO: ${modelo}`;
+    
+    if (Erro !== '') {
+    copiedText += `\n           • CÓDIGO DE ERRO: ${Erro}`;
     }
-
-    if (numeroSerie !== '') {
-    copiedText += `\n           • N° DE SÉRIE: ${numeroSerie}`;
+    
+    if (luzLed !== '') {
+    copiedText += `\n           • LUZ INTERNA: ${luzLed}`;
     }
-
-    if (notaFiscal !== '') {
-    copiedText += `\n           • N° NOTA FISCAL: ${notaFiscal}`;
+    
+    if (Manipulo !== '') {
+    copiedText += `\n           • MANÍPULO: ${Manipulo}`;
     }
-
-    if (dataCompra !== '') {
-    copiedText += `\n           • DATA DA COMPRA: ${dataCompra}`;
+    
+    if (Porta !== '') {
+    copiedText += `\n           • PORTA: ${Porta}`;
     }
-
-    if (emGarantia !== '') {
-    copiedText += `\n           • GARANTIA: ${emGarantia}`;
-    }
-
-    copiedText += `\n
-            CLIENTE CIENTE QUE:
-                PARA CASOS DE PRODUTOS EM PERÍODO DE GARANTIA COM POSSÍVEL EVENTO FORA DE GARANTIA PODERÁ SER GERADO UM ORÇAMENTO;
-                FORA DE GARANTIA - A VISITA, PEÇAS E MÃO DE OBRA SERÃO COBRADAS;
-                PRAZO DE 24 HORAS ÚTEIS PARA CONTATO DA ASSISTÊNCIA TÉCNICA.`;
-
+    
     copyToClipboard(copiedText);
-
+    
 }
 
 // FIM - FUNÇÃO COPIAR TEXTO
 
-// INICIO - SCRIPT PARA OCULTAR LAVADORA, REFRIGERADOR, ACN, POWERBOT E LAVA-LOUÇAS
+// INICIO - SCRIPT PARA OCULTAR CATEGORIA PRODUTOS
 
     function toggleContent(id) {
         var content = document.getElementById(id);
