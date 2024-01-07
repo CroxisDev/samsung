@@ -19,6 +19,23 @@ window.addEventListener('scroll', () => {
 
 // FIM - Exibir/Ocultar menu ao utilizar scroll do mouse
 
+// INICIO - CAIXA ALTA
+
+var textareas = document.querySelectorAll('.section-inquerito textarea');
+
+textareas.forEach(function(textarea) {
+    textarea.addEventListener('input', function() {
+        var start = this.selectionStart;
+        var end = this.selectionEnd;
+
+        this.value = this.value.toUpperCase();
+
+        this.setSelectionRange(start, end);
+    });
+});
+
+// FIM - CAIXA ALTA
+
 // INICIO - NOTIFY
 
 // Adicionar evento de clique a todos os botões com a classe "copy-button"
