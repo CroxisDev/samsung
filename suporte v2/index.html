@@ -14,7 +14,8 @@
 
     <link rel="icon" href="https://croxisdev.com.br/croxisdev.png">
     <link rel="stylesheet" href="styleMainSuporte.css">
-    <link rel="stylesheet" href="styleContent.css">
+    <link rel="stylesheet" href="styleContentSuporte.css">
+    <link rel="stylesheet" href="styleSlideSuporte.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
 
@@ -55,13 +56,13 @@
 
         <div class="flex-box">
 
-            <div class="box-main">
+            <div class="section-inquerito">
 
-                <div class="box-title"> 
+                <div class="box-title-inquerito"> 
                     <h4>Suporte Técnico - Digital Appliances</h4>
                 </div>
 
-                <div class="box-content">
+                <div class="box-content-inquerito">
 
                     <h2>Inquérito</h2>
 
@@ -83,6 +84,7 @@
                             <option value="POSSUI - PERMITIU VINCULAR">PERMITIU VINCULAR</option>
                             <option value="POSSUI - NÃO PERMITIU VINCULAR">NÃO PERMITIU VINCULAR</option>
                             <option value="POSSUI - FALHA AO VINCULAR">FALHA AO VINCULAR</option>
+                            <option value="N/A - FALHA AO ABRIR">FALHA AO ABRIR</option>
                             <option value="NÃO POSSUI - FOI OFERTADO">FOI OFERTADO</option>
                             <option value="NÃO POSSUI">NÃO POSSUI</option>
                         </select><br><br>
@@ -99,24 +101,18 @@
                             <option value="">-- Selecione uma opção --</option>
                             <option value="VERBALIZADO">VERBALIZADO</option>
                             <option value="NÃO VERBALIZADO">NÃO VERBALIZADO</option>
-                            <option value="BEM SUCEDIDO">BEM-SUCEDIDO</option>
-                            <option value="MALSUCEDIDO">MALSUCEDIDO</option>
+                            <option value="REALIZADO CALLBACK">FEITO CALLBACK</option>
+                            <option value="FALHA AO REALIZAR CALLBACK">FALHA NO CALLBACK</option>
                             <option value="OUTRA CHAMADA ENTROU NO LUGAR">ENTROU OUTRA CHAMADA</option>
-                        </select><br><br>
-
-                    <label>Protocolo por SMS:</label><br>
-                        <select id="protocolo-sms-resposta">
-                            <option value="">-- Selecione uma opção --</option>
-                            <option value="PERMITIDO">PERMITIDO</option>
-                            <option value="NEGADO">NEGADO</option>
                         </select><br><br>
 
                     <label>Visual Suporte:</label><br>
                         <select id="visual-resposta">
                             <option value="">-- Selecione uma opção --</option>
-                            <option value="UTILIZADO">Utilizado</option>
-                            <option value="NÃO UTILIZADO - FALHA NA FERRAMENTA">Falha na Ferramenta</option>
-                            <option value="NÃO UTILIZADO - CONSUMIDOR RECUSOU/SEM INTERNET">Consumidor Recusou/Sem Internet</option>
+                            <option value="UTILIZADO">UTILIZADO</option>
+                            <option value="NÃO UTILIZADO - FALHA NA FERRAMENTA">FALHA NA FERRAMENTA</option>
+                            <option value="NÃO UTILIZADO - CONSUMIDOR RECUSOU">CONSUMIDOR RECUSOU</option>
+                            <option value="NÃO UTILIZADO - SEM INTERNET">CONSUMIDOR SEM INTERNET</option>
                         </select><br><br>
 
                     <button class="copy-button" onclick="copyinquerito('inquerito')"><i class="fas fa-copy"></i></button>
@@ -127,88 +123,76 @@
 
         <div class="flex-box">
 
-            <div class="box-main">
+            <div class="section-visual">
 
-                <div class="box-title"> 
+                <div class="box-title-visual"> 
                     <h4>Visual Suporte - Procedimentos</h4>
                 </div>
 
-                <div class="box-content">
+                <div class="box-content-visual">
 
                     <div class="container">
 
-                            <div class="carousel">
+                        <div class="slider-wrapper">
 
-                                <div class="box-option">
+                            <button id="prev-slide" class="slide-button material-symbols-rounded">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
 
-                                    <img src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/Thumbnail-WD11T.png?$160_160_PNG$"><br>
-                                    <h2>Lava e Seca</h2>
-
+                            <ul class="image-list">
+                                
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/Thumbnail-WD11T.png?$160_160_PNG$" alt="img-1" title="Lava e Seca"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/WM3b.png?$160_160_PNG$"><br>
-                                    <h2>Secadora</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/WM3b.png?$160_160_PNG$" alt="img-2" title="Secadora"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/REF1.png?$140_140_PNG$"><br>
-                                    <h2>Refrigerador</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/REF1.png?$140_140_PNG$" alt="img-3" title="Refrigerador"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/AC1.png?$140_140_PNG$"><br>
-                                    <h2>Ar-Condicionado</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/AC1.png?$140_140_PNG$" alt="img-4" title="Ar-Condicionado"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/Thumbnail-JetBot.png?$140_140_PNG$"><br>
-                                    <h2>Aspirador</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/Thumbnail-JetBot.png?$140_140_PNG$" alt="img-5" title="Aspirador"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/lava.png?$140_140_PNG$"><br>
-                                    <h2>Lava-Louças</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/assets/br/home-appliances/lava.png?$140_140_PNG$" alt="img-6" title="Lava-Louça"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/p6pim/br/nv7b4545sak-bz/gallery/br-nv7000b-nv7b4550vab-nv7b4545sak-bz-thumb-539112329?$160_160_PNG$"><br>
-                                    <h2>Forno</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/p6pim/br/nv7b4545sak-bz/gallery/br-nv7000b-nv7b4550vab-nv7b4545sak-bz-thumb-539112329?$160_160_PNG$" alt="img-7" title="Forno"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/p6pim/br/na30n6555ts-az/gallery/br-na9300k-gas-cooktop-with-19k-btu-dual-burner-na30n6555ts-az-thumb-538948884?$160_160_PNG$"><br>
-                                    <h2>Cooktop</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/p6pim/br/na30n6555ts-az/gallery/br-na9300k-gas-cooktop-with-19k-btu-dual-burner-na30n6555ts-az-thumb-538948884?$160_160_PNG$" alt="img-8" title="Cooktop"/>
                                 </div>
 
-                                <div class="box-option">
-
-                                    <img src="//images.samsung.com/is/image/samsung/p6pim/br/f-nk36c-nk-ar7/gallery/br-coifa-com-wi-fi-e-power-ventilation-de-90cm-f-nk36c-nk-ar7-thumb-539136599?$160_160_PNG$"><br>
-                                    <h2>Coifas</h2>
-
+                                <div class="image-content">
+                                    <img class="image-item" src="//images.samsung.com/is/image/samsung/p6pim/br/f-nk36c-nk-ar7/gallery/br-coifa-com-wi-fi-e-power-ventilation-de-90cm-f-nk36c-nk-ar7-thumb-539136599?$160_160_PNG$" alt="img-9" title="Coifa"/>
                                 </div>
 
+                            </ul>
+
+                            <button id="next-slide" class="slide-button material-symbols-rounded">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="slider-scrollbar">
+                            <div class="scrollbar-track">
+                                <div class="scrollbar-thumb"></div>
                             </div>
+                        </div>
 
-                            <div class="arrow-container">
-                                <div class="arrow" onclick="prevSlide()"><i class="fa-solid fa-caret-left"></i></div>
-                                <div class="arrow arrow-right" onclick="nextSlide()"><i class="fa-solid fa-caret-right"></i></div>
-                            </div>
                     </div>
+
                 </div>
             </div>
 
