@@ -24,6 +24,9 @@ function copyinquerito() {
         MARKETING: ${marketing}
         RETORNO DE LIGAÇÃO: ${retornoLigacao}`;
 
+    if (visual !== '') {
+        copiedText += `\n        VISUAL SUPORTE: ${visual}`;
+    }
     copyToClipboard(copiedText);
 }
 
