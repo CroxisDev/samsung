@@ -17,6 +17,7 @@ function copyinquerito() {
     const sa = document.getElementById('sa-resposta').value;
     const marketing = document.getElementById('marketing-resposta').value;
     const retornoLigacao = document.getElementById('retorno-ligacao-resposta').value;
+    const visual = document.getElementById('visual-resposta').value;
 
     let copiedText = `${consumidorInfo}\n
         CS VIEW: ${csView}
@@ -27,6 +28,7 @@ function copyinquerito() {
     if (visual !== '') {
         copiedText += `\n        VISUAL SUPORTE: ${visual}`;
     }
+
     copyToClipboard(copiedText);
 }
 
