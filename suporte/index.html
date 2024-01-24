@@ -48,41 +48,14 @@
 
             <div class="section_profile">
                 
-                <h2>Dados do Consumidor</h2>
+                <h2>Anotações</h2>
 
                 <div class="profile_side-by-side profile_bottom">
-                    <label>Nome Completo:</label>
-                    <input type="text" placeholder="Nome do consumidor..." autocomplete="off">
+                    <textarea id="bloconotas" rows="5" cols="50" placeholder="ANOTAÇÕES: (Salvamento Automático)" spellcheck="false" onblur="saveContent()"></textarea>
                 </div>
-
-                <div class="profile_side-by-side profile_bottom">
-                    <label>CPF/CNPJ:</label>
-                    <input type="text" placeholder="xxx.xxx.xxx-xx" maxlength="14" autocomplete="off">
-                </div>
-
-                <div class="profile_side-by-side profile_bottom">
-                    <label>Data de Nascimento:</label>
-                    <input type="text" placeholder="dd/mm/aaaa" autocomplete="off">
-                </div> <br>
-
-                <div class="profile_side-by-side profile_bottom">
-                    <label>Protocolo:</label>
-                    <input type="text" placeholder="Ex: 22987629111" maxlength="10" autocomplete="off">
-                </div>
-
-                <div class="profile_side-by-side profile_bottom">
-                    <label>Telefone:</label>
-                    <input type="text" placeholder="(XX) XXXX-XXXX" maxlength="11" autocomplete="off">
-                </div>
-
-                <div class="profile_side-by-side profile_bottom">
-                    <label>E-mail:</label>
-                    <input type="text" placeholder="exemplo@exemplo.com.br" autocomplete="off">
-                </div>
-                
             </div>
 
-            <div id="section_notes" class="section_notes">
+            <div class="section_notes">
                 
                 <h2>Canais de contato</h2>
 
@@ -97,15 +70,6 @@
                         <p>0800 007 2611 (Capitais e grandes centros)</p>
                 </div>
                 
-            </div>
-
-            <div id="section_bloco" class="section_bloco">
-                
-                <h2>Anotações</h2>
-
-                <div class="profile_side-by-side profile_bottom">
-                    <textarea id="bloconotas" rows="5" cols="50" placeholder="ANOTAÇÕES: (Salvamento Automático)" spellcheck="false" onblur="saveContent()"></textarea>
-                </div>
             </div>
 
         </div>
