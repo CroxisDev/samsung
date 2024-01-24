@@ -36,26 +36,6 @@ textareas.forEach(function(textarea) {
 
 // FIM - CAIXA ALTA
 
-// INICIO - Exibe/Oculta o Anotações
-
-  const openNoteButton = document.getElementById('openNoteButton');
-  const sectionNotes = document.getElementById('section_notes');
-  const sectionBloco = document.getElementById('section_bloco');
-
-  openNoteButton.addEventListener('click', () => {
-    // Verifica se a seção de notas está visível
-    if (sectionNotes.style.display === '' || sectionNotes.style.display === 'block') {
-      sectionNotes.style.display = 'none';
-      sectionBloco.style.display = 'block';
-    } else {
-      // Caso contrário, a seção de bloco está visível
-      sectionNotes.style.display = 'block';
-      sectionBloco.style.display = 'none';
-    }
-  });
-
-// FIM - Exibe/Oculta o Anotações
-
 // INICIO - SALVAR TEXTO DO ANOTAÇÃO
 
     function saveContent() {
